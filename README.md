@@ -2,7 +2,7 @@
 
 Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 
-* short_essay_helper.pl - the Essay Helper algorithm
+* short_Essay-Helper.pl - the Essay Helper algorithm
 * distances.pl - the KNN algorithm
 * file.txt - the essay to write the essay on
 * walk_through.txt - example walkthrough of the algorithm (no output)
@@ -19,7 +19,7 @@ Install List Prolog Interpreter Repository (https://github.com/luciangreen/listp
 
 # Installation from List Prolog Package Manager (LPPM)
 
-* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>, loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Essay_Helper").`.
+* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>, loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Essay-Helper").`.
 
 # Installing and Running Essay Helper
 
@@ -27,10 +27,10 @@ Install List Prolog Interpreter Repository (https://github.com/luciangreen/listp
 * Run swipl
 * In swipl, run with: 
 ```
-short_essay_helper("file.txt",5,Essay),writeln1(Essay).
+short_Essay-Helper("file.txt",5,Essay),writeln1(Essay).
 ```
 
-* See <a href="https://github.com/luciangreen/Essay_Helper/blob/master/walk_through.txt">walk-through</a> as an exmaple.
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example.
 
 # Authors
 
