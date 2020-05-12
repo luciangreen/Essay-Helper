@@ -1,0 +1,212 @@
+[["","",["heading"]],["","",["a"]],["","",["here"]],[1,1,["a","b","c","d"]],[1,2,["e","f","g","h"]]]
+The Short Essay Helper will you help structure and write your essay about "Heading" with 2 reasons per paragraph.
+The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.
+The Helper will output the file, "file2020512121854.86923599243164.txt" used for marking.  After using the Helper, the Helper will run Text To Breasonings.  Return "file2020512121854.86923599243164.txt" and the two breasoning dictionaries for marking.
+Heading
+
+1a. here1
+
+1. a b c d. e f g h.
+
+What is group 1 of 5 in the exposition that groups ideas about "Heading"? 
+|    g1
+What is group 2 of 5 in the exposition that groups ideas about "Heading"? 
+|    g2
+<Exposition Paragraph 1 of 5 - "g1"> <Reason 1 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+What is the paragraph number of the quote about the paragraph topic "g1"? 
+|    1
+What is the sentence number of the quote about the paragraph topic "g1"? 
+|    1
+What is the paraphrased quote about the paragraph topic "g1"? 
+|    a b c e
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+How does the quote you entered ("a b c e") relate to the paragraph topic "g1"? 
+|    g1 contains a b c e
+Attempt 1
+[found,[g],[g]]
+[found,[a,b,c,d],[a]]
+Success
+<Exposition Paragraph 1 of 5 - "g1"> <Reason 2 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+What is the paragraph number of the quote about the paragraph topic "g1"? 
+|    1
+What is the sentence number of the quote about the paragraph topic "g1"? 
+|    1
+What is the paraphrased quote about the paragraph topic "g1"? 
+|    a b c f
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+How does the quote you entered ("a b c f") relate to the paragraph topic "g1"? 
+|    g1 contains a b c f
+Attempt 1
+[found,[g],[g]]
+[found,[a,b,c,d],[a]]
+Success
+<Exposition Paragraph 2 of 5 - "g2"> <Reason 1 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+What is the paragraph number of the quote about the paragraph topic "g2"? 
+|    1
+What is the sentence number of the quote about the paragraph topic "g2"? 
+|    1
+What is the paraphrased quote about the paragraph topic "g2"? 
+|    a b c g
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+How does the quote you entered ("a b c g") relate to the paragraph topic "g2"? 
+|    g2 contains a b c g
+Attempt 1
+[found,[g],[g]]
+[found,[a,b,c,d],[a]]
+Success
+<Exposition Paragraph 2 of 5 - "g2"> <Reason 2 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+What is the paragraph number of the quote about the paragraph topic "g2"? 
+|    1
+What is the sentence number of the quote about the paragraph topic "g2"? 
+|    1
+What is the paraphrased quote about the paragraph topic "g2"? 
+|    a b c h
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+How does the quote you entered ("a b c h") relate to the paragraph topic "g2"? 
+|    g2 contains a b c h
+Attempt 1
+[found,[g],[g]]
+[found,[a,b,c,d],[a]]
+Success
+Do you agree or disagree with "Heading" (a/d) ? 
+|    a
+Heading
+
+1a. here1
+
+1. a b c d. e f g h.
+
+<Critique Paragraph 1 of 5> <Reason 1 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+What is the paragraph number of the quote to comment on? 
+|    1
+What is the sentence number of the quote to comment on? 
+|    1
+What is the paraphrased quote to comment on? 
+|    a b c e
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+Is your comment from a quote (y/n)? 
+|    y
+What is the paragraph number of the comment? 
+|    1
+What is the sentence number of the comment? 
+|    1
+What is the comment that is from the quote? 
+|    a b c f
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+How does the comment "a b c f" relate to the essay topic "Heading"? 
+|    Heading contains a b c f
+Attempt 1
+[found,[a,b,c,f],[a]]
+[found,[heading],[b]]
+Success
+<Critique Paragraph 1 of 5> <Reason 2 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+What is the paragraph number of the quote to comment on? 
+|    1
+What is the sentence number of the quote to comment on? 
+|    1
+What is the paraphrased quote to comment on? 
+|    a b c g
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+Is your comment from a quote (y/n)? 
+|    y
+What is the paragraph number of the comment? 
+|    1
+What is the sentence number of the comment? 
+|    1
+What is the comment that is from the quote? 
+|    a b c h
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+Please select a comment to connect the comment "a b c h" to:
+1 - a b c f
+
+|    1
+How does "a b c h" connect to "a b c f"? 
+|    a b c h is a b c f
+Attempt 1
+[found,[a,b,c,f],[a]]
+[found,[a,b,c,h],[a]]
+Success
+<Critique Paragraph 2 of 5> <Reason 1 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+What is the paragraph number of the quote to comment on? 
+|    1
+What is the sentence number of the quote to comment on? 
+|    1
+What is the paraphrased quote to comment on? 
+|    a b c i
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+Is your comment from a quote (y/n)? 
+|    y
+What is the paragraph number of the comment? 
+|    1
+What is the sentence number of the comment? 
+|    1
+What is the comment that is from the quote? 
+|    a b c j
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+How does the comment "a b c j" relate to the essay topic "Heading"? 
+|    heading contains a b c j
+Attempt 1
+[found,[a,b,c,j],[a]]
+[found,[heading],[b]]
+Success
+<Critique Paragraph 2 of 5> <Reason 2 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+What is the paragraph number of the quote to comment on? 
+|    1
+What is the sentence number of the quote to comment on? 
+|    1
+What is the paraphrased quote to comment on? 
+|    a b c k
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+Is your comment from a quote (y/n)? 
+|    y
+What is the paragraph number of the comment? 
+|    1
+What is the sentence number of the comment? 
+|    1
+What is the comment that is from the quote? 
+|    a b c l
+Attempt 1
+[found,[a,b,c,d],[a]]
+Success
+Please select a comment to connect the comment "a b c l" to:
+1 - a b c j
+
+|    1
+How does "a b c l" connect to "a b c j"? 
+|    a b c l is a b c j
+Attempt 1
+[found,[a,b,c,j],[a]]
+[found,[a,b,c,l],[a]]
+Success
+What is the future area of research from your essay about "Heading"? 
+|    heading should be automated.
