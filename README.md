@@ -2,7 +2,7 @@
 
 Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 
-* short_Essay-Helper.pl - the Essay Helper algorithm
+* short_essay-helper.pl - the Essay Helper algorithm
 * distances.pl - the KNN algorithm
 * file.txt - the essay to write the essay on
 * walk_through.txt - example walkthrough of the algorithm (no output)
