@@ -29,6 +29,7 @@ Install List Prolog Interpreter Repository (https://github.com/luciangreen/listp
 ```
 short_essay_helper("file.txt",5).
 ```
+about essay "file.txt" for 5 reasons per paragraph.
 
 * See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example.
 
