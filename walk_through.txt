@@ -1,7 +1,7 @@
 [["","",["heading"]],["","",["a"]],["","",["here"]],[1,1,["a","b","c","d"]],[1,2,["e","f","g","h"]]]
 The Short Essay Helper will you help structure and write your essay about "Heading" with 2 reasons per paragraph.
 The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.
-The Helper will output the file, "file2020512121854.86923599243164.txt" used for marking.  After using the Helper, the Helper will run Text To Breasonings.  Return "file2020512121854.86923599243164.txt" and the two breasoning dictionaries for marking.
+The Helper will output the file, "file2020512121854.86923599243164.txt" used for marking.  After using the Helper, run Text To Breasonings.  Return "file2020512121854.86923599243164.txt" and the two breasoning dictionaries for marking.
 Heading
 
 1a. here1

@@ -27,7 +27,7 @@ string(String) --> list(String).
 list([]) --> [].
 list([L|Ls]) --> [L], list(Ls).
 
-short_essay_helper(Filex,Reasons_per_paragraph,[Exposition,Critique,Future_research]) :-
+short_essay_helper(Filex,Reasons_per_paragraph) :-
 	retractall(critique3(_)),
 	assertz(critique3([])),
 
@@ -60,7 +60,9 @@ agree_disagree(Pole),
 
 	concat_list(["What is the future area of research from your essay about \"",String01,"\"? "],Future_research_prompt),
 	%%trace,
-	get_string(Future_research_prompt,Pole,one-not-ml,"","",Future_research).
+	get_string(Future_research_prompt,Pole,one-not-ml,"","",Future_research),
+	
+term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream).
 
 	
 	
@@ -73,7 +75,7 @@ generate_file_name(File1) :-
 
 explain_structure(String01,Reasons_per_paragraph,File1) :-
 	concat_list(["The Short Essay Helper will you help structure and write your essay about \"",String01,"\" with ",Reasons_per_paragraph," reasons per paragraph.","\n",
-	"The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.","\n","The Helper will output the file, \"",File1,"\" used for marking.  After using the Helper, the Helper will run Text To Breasonings.  Return \"",File1,"\" and the two breasoning dictionaries for marking."],String1),
+	"The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.","\n","The Helper will output the file, \"",File1,"\" used for marking.  After using the Helper, run Text To Breasonings.  Return \"",File1,"\" and the two breasoning dictionaries for marking."],String1),
 	writeln(String1).
 
 exposition(String00,String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :-

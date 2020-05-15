@@ -27,7 +27,7 @@ Install List Prolog Interpreter Repository (https://github.com/luciangreen/listp
 * Run swipl
 * In swipl, run with: 
 ```
-short_essay_helper("file.txt",5,Essay),writeln1(Essay).
+short_essay_helper("file.txt",5).
 ```
 
 * See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example.
