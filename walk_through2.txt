@@ -1,0 +1,196 @@
+?- short_essay_helper("file.txt",2).                                   [["","",["heading"]],["","",["a"]],["","",["here"]],[1,1,["a","b","c","d"]],[1,2,["e","f","g","h"]]]
+The Short Essay Helper will you help structure and write your essay about "Heading" with 2 reasons per paragraph.
+The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.
+The Helper will output the file, "file2020823202415.234944105148315.txt" used for marking.  After using the Helper, run Text To Breasonings.  Return "file2020823202415.234944105148315.txt" and the two breasoning dictionaries for marking.
+Heading
+
+1a. here1
+
+1. a b c d. e f g h.
+What is group 1 of 5 in the exposition that groups ideas about "Heading"? 
+|    g1
+What is group 2 of 5 in the exposition that groups ideas about "Heading"? 
+|    g2
+<Exposition Paragraph 1 of 5 - "g1"> <Reason 1 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote about the paragraph topic "g1"? 
+|    a1
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[]
+|    a1 r
+How does the quote you entered ("a1") relate to the paragraph topic "g1"? 
+|    a1 is g1
+<Exposition Paragraph 1 of 5 - "g1"> <Reason 2 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote about the paragraph topic "g1"? 
+|    a2
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[a1 r]
+|    a2 r
+How does the quote you entered ("a2") relate to the paragraph topic "g1"? 
+|    a2 i g1
+<Exposition Paragraph 2 of 5 - "g2"> <Reason 1 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote about the paragraph topic "g2"? 
+|    a3
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[a2 r]
+|    a3 r
+How does the quote you entered ("a3") relate to the paragraph topic "g2"? 
+|    a3 is g2
+<Exposition Paragraph 2 of 5 - "g2"> <Reason 2 of 2>
+The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote about the paragraph topic "g2"? 
+|    a4
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[a3 r]
+|    a4 r
+How does the quote you entered ("a4") relate to the paragraph topic "g2"? 
+|    a4 is g2
+Do you agree or disagree with "Heading" (a/d) ? 
+|    a
+Heading
+
+1a. here1
+
+1. a b c d. e f g h.
+<Critique Paragraph 1 of 5> <Reason 1 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote to comment on? 
+|    e1
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[a4 r]
+|    e1 r
+Is your comment from a quote (y/n)? 
+|    y
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the comment that is from the quote? 
+|    e11
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[e1 r]
+|    e11 r
+How does the comment "e11" relate to the essay topic "Heading"? 
+|    e11 is heading.
+<Critique Paragraph 1 of 5> <Reason 2 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote to comment on? 
+|    e2
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[e11 r]
+|    e2 r
+Is your comment from a quote (y/n)? 
+|    n
+What is the comment? 
+|    e21
+Please select a comment to connect the comment "e21" to:
+1 - e11
+
+|    1
+How does "e21" connect to "e11"? 
+|    e21 is e11
+<Critique Paragraph 2 of 5> <Reason 1 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote to comment on? 
+|    e3
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[e2 r]
+|    e3 r
+Is your comment from a quote (y/n)? 
+|    y
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the comment that is from the quote? 
+|    e31
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[e3 r]
+|    e31 r
+How does the comment "e31" relate to the essay topic "Heading"? 
+|    heading contains e31.
+<Critique Paragraph 2 of 5> <Reason 2 of 2>
+The Helper will ask you for your comment on the quote you are about to enter.
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the paraphrased quote to comment on? 
+|    e4
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[e31 r]
+|    e4 r
+Is your comment from a quote (y/n)? 
+|    y
+Note: Enter in-text reference using AGPS, e.g.
+ The first work supports the second work (Surname 2000, pp. 18-9).
+ Surname (2000, pp. 18-9) states that ...
+What is the comment that is from the quote? 
+|    e41
+What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
+ Don't forget <i></i> and delimit multiple references with "\n".
+Existing references (copy one or many delimited with "\n":
+[e4 r]
+|    e41 r
+Please select a comment to connect the comment "e41" to:
+1 - e31
+
+|    1
+How does "e41" connect to "e31"? 
+|    e41 isn't e31
+What is the future area of research from your essay about "Heading"? 
+|    heading auto
+"Heading
+
+I will critically analyse Heading.  I will agree with Heading.  e11 is heading.  heading contains e31.  
+
+a1  a1 is g1  a2  a2 i g1  
+a3  a3 is g2  a4  a4 is g2  
+e11 is heading.  e1  e11    e2  e21  e21 is e11  
+heading contains e31.  e3  e31    e4  e41  e41 isn't e31  
+
+e11 is heading.  heading contains e31.  I have agreed with Heading.  heading auto
+
+Bibliography
+
+(not shown)

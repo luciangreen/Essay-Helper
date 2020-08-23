@@ -6,6 +6,7 @@ Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph
 * distances.pl - the KNN algorithm
 * file.txt - the essay to write the essay on
 * walk_through.txt - example walkthrough of the algorithm (no output)
+* short_essay_helper2.pl - the Essay Helper without paraphrasing checking, and outputs an HTML essay with ordered bibliography.
 
 # Getting Started
 
@@ -31,7 +32,7 @@ short_essay_helper("file.txt",5).
 ```
 about essay "file.txt" for 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example.
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example of Essay Helper and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.html">walk_through.html</a> as examples of Essay Helper 2.
 
 # Authors
 
