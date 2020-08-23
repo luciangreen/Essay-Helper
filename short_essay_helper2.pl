@@ -204,7 +204,7 @@ member(Critique1,Critique),
 	
 Critique1=[Numbera11,[Para_topic_sent,[_Number2a,_Number3a,_String3,_String3a,String5a,_String3y,_String3ay,String5a1]|Critique2]],
 	
-concat_list([Para_topic_sent,"  ",String5a,"  ",String5a1,"  "],Essay0),output_critique(Numbera11,Critique2,String5a1a,Essay0,Essay1),
+concat_list([Para_topic_sent,"  ",String5a,"  ",String5a1,"  "],Essay0),output_critique(Numbera11,Critique2,String5a1,Essay0,Essay1),
 	
 		concat_list([Essay1,"\n"],%%Essay22)
 
@@ -215,16 +215,17 @@ Essay23)),Essay3),
 %% *** HTML (<br> not \n)
 
 output_critique(_Numbera11,[],_String5a1a,Essay,Essay) :- !.
-output_critique(Numbera11,Critique,String5a1a,Essay1,Essay2) :-
+output_critique(Numbera11,Critique,CString5a1a,Essay1,Essay2) :-
 findall( Essay6,(member(Critique1,Critique),Critique1=[Numbera11,_Number3a,_String3,_String3a,String5a,String3y,_String3ay,String5a1,
 _CNumber2aa,_CNumber3aa,CString5a1a,
 	_CNumber2a1,_CNumber3a1,_LastCStrings,
 	String5aaa],
 	concat_list([String5a,"  ",String5a1,"  ",String5aaa,"  "],Essay4),
 	delete(Critique,Critique1,Critique2),
-	output_critique(Numbera11,Critique2,CString5a1a,Essay4,Essay6)
-),[Essay3]),
-concat_list([Essay1,"  ",Essay3],Essay2).
+	output_critique(Numbera11,Critique2,String5aaa,Essay4,Essay6)
+),Essay33),
+%%trace,
+(Essay33=[]->concat_list([Essay1,"  "],Essay2);((Essay33=[Essay3]->concat_list([Essay1,"  ",Essay3],Essay2);Essay33=[Essay3|[E33]], concat_list([Essay1,"  ",Essay3,E33],Essay2)))).
 
 
 /**critique(String00,String01,Reasons_per_paragraph,Numbers,Critique).
