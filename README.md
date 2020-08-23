@@ -32,7 +32,7 @@ short_essay_helper("file.txt",5).
 ```
 about essay "file.txt" for 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example of Essay Helper and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.html">walk_through.html</a> as examples of Essay Helper 2.
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example of Essay Helper and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.html">walk_through2.html</a> as examples of Essay Helper 2.
 
 # Authors
 
