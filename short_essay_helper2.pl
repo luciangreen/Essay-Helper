@@ -223,7 +223,11 @@ _CNumber2aa,_CNumber3aa,CString5a1a,
 	output_critique(Numbera11,Critique2,String5aaa,Essay4,Essay6)
 ),Essay33),
 %%trace,
-(Essay33=[]->concat_list([Essay1,"  "],Essay2);(Essay33=[Essay3]->concat_list([Essay1,"  ",Essay3],Essay2);(Essay33=[Essay3|[E33]]-> concat_list([Essay1,"  ",Essay3,E33],Essay2);(Essay33=[Essay3|E33], concat_list(E33,E34),concat_list([Essay1,"  ",Essay3,E34],Essay2))))).
+(Essay33=[]->concat_list([Essay1,"  "],Essay2);%%(Essay33=[Essay3]->concat_list([Essay1,"  ",Essay3],Essay2);%%(Essay33=[Essay3|[E33]]-> concat_list([Essay1,"  ",Essay3,E33],Essay2);
+(Essay33=[Essay3|E33], concat_list(E33,E34),concat_list([Essay1,"  ",Essay3,E34],Essay2)))
+%%)
+%%)
+.
 
 
 /**critique(String00,String01,Reasons_per_paragraph,Numbers,Critique).
