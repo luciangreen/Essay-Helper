@@ -42,7 +42,7 @@ short_essay_helper(Filex,Reasons_per_paragraph) :-
 	
 writeln1(String02),
 
-	generate_file_name(File1),
+	generate_file_name(File1,File2),
 
 	Numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
 	explain_structure(String01,Reasons_per_paragraph,File1),
@@ -76,8 +76,6 @@ refs(R2),
 
 write_essay(String01,Pole,Exposition,Critique,Future_research,R2,Essay,HTML),
 writeln1(Essay),
-
-	generate_file_name2(File2),
 
 	(open_s(File2,write,Stream1),
 %%	string_codes(BrDict3),
@@ -225,19 +223,17 @@ _CNumber2aa,_CNumber3aa,CString5a1a,
 	output_critique(Numbera11,Critique2,String5aaa,Essay4,Essay6)
 ),Essay33),
 %%trace,
-(Essay33=[]->concat_list([Essay1,"  "],Essay2);((Essay33=[Essay3]->concat_list([Essay1,"  ",Essay3],Essay2);Essay33=[Essay3|[E33]], concat_list([Essay1,"  ",Essay3,E33],Essay2)))).
+(Essay33=[]->concat_list([Essay1,"  "],Essay2);(Essay33=[Essay3]->concat_list([Essay1,"  ",Essay3],Essay2);(Essay33=[Essay3|[E33]]-> concat_list([Essay1,"  ",Essay3,E33],Essay2);(Essay33=[Essay3|E33], concat_list(E33,E34),concat_list([Essay1,"  ",Essay3,E34],Essay2))))).
 
 
 /**critique(String00,String01,Reasons_per_paragraph,Numbers,Critique).
 	**/
 	
-generate_file_name(File1) :-
+generate_file_name(File1,File2) :-
 			get_time(TS),stamp_date_time(TS,date(Year,Month,Day,Hour1,Minute1,Seconda,_A,_TZ,_False),local),
-	concat_list(["file",Year,Month,Day,Hour1,Minute1,Seconda,".txt"],File1).
+	concat_list(["file",Year,Month,Day,Hour1,Minute1,Seconda,".txt"],File1),
+		concat_list(["file",Year,Month,Day,Hour1,Minute1,Seconda,".html"],File2).
 
-generate_file_name2(File1) :-
-			get_time(TS),stamp_date_time(TS,date(Year,Month,Day,Hour1,Minute1,Seconda,_A,_TZ,_False),local),
-	concat_list(["file",Year,Month,Day,Hour1,Minute1,Seconda,".html"],File1).
 
 explain_structure(String01,Reasons_per_paragraph,File1) :-
 	concat_list(["The Short Essay Helper will you help structure and write your essay about \"",String01,"\" with ",Reasons_per_paragraph," reasons per paragraph.","\n",
