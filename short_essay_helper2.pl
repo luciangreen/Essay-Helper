@@ -27,20 +27,21 @@ string(String) --> list(String).
 list([]) --> [].
 list([L|Ls]) --> [L], list(Ls).
 
-short_essay_helper(Filex,Reasons_per_paragraph) :-
+short_essay_helper(String01,Reasons_per_paragraph) :-
 	retractall(critique3(_)),
 	assertz(critique3([])),
 
 	retractall(refs(_)),
 	assertz(refs([])),
 
-	phrase_from_file_s(string(String00), Filex),
+	%%phrase_from_file_s(string(String00), Filex),
 
-	split_string(String00, "\n\r", "\n\r", [String01|_]),
+	%%split_string(String00, "\n\r", "\n\r", [String01|_]),
 
-	prepare_file_for_ml(String00,String02),
+	%%prepare_file_for_ml(String00,String02),
 	
-writeln1(String02),
+%%writeln1(String02),
+
 
 	generate_file_name(File1,File2),
 
@@ -95,10 +96,13 @@ concat_list1(D,F) :-
 write_essay(String01,Pole,Exposition,Critique,Future_research,R2,Essay,HTML) :-
 	write_heading(String01,Heading),
 	write_introduction(String01,Pole,Critique,Introduction),
-	write_exposition(Exposition,Exposition2),
+	write_exposition(Exposition,Exposition2a),
+	concat_list(["I will expose ",String01," in this half.  ",Exposition2a],Exposition2),
 	%%string_concat(Exposition2,"\n",Exposition2a),
 	write_critique(Critique,Critique2a),
-	string_concat(Critique2a,"\n",Critique2),
+	string_concat(Critique2a,"\n",Critique2b),
+	atom_string(Pole,Pole1),
+	concat_list(["I will ",Pole1," with ",String01," in this half.  ",Critique2b],Critique2),
 	write_conclusion(String01,Pole,Critique,Future_research,Conclusion),
 	write_references(R2,References,Refs_no_heading),
 	concat_list([Heading,Introduction,Exposition2,Critique2,Conclusion,References],
@@ -241,7 +245,7 @@ generate_file_name(File1,File2) :-
 
 explain_structure(String01,Reasons_per_paragraph,File1) :-
 	concat_list(["The Short Essay Helper will you help structure and write your essay about \"",String01,"\" with ",Reasons_per_paragraph," reasons per paragraph.","\n",
-	"The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.","\n","The Helper will output the file, \"",File1,"\" used for marking.  After using the Helper, run Text To Breasonings.  Return \"",File1,"\" and the two breasoning dictionaries for marking."],String1),
+	"The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.","\n"],String1),
 	writeln(String1).
 
 exposition(String00,String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :-
@@ -250,8 +254,8 @@ exposition(String00,String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :-
 	length(List2,Reasons_per_paragraph),
 	append(List2,_,Numbers),
 
-	string_codes(String001,String00),
-	writeln(String001),
+	%%string_codes(String001,String00),
+	%%writeln(String001),
 	findall([Number1,Exposition2],(
 		%%trace,
 member(Number1,List1),concat_list(["What is group ",Number1," of 5 in the exposition that groups ideas about \"",String01,"\"? "],String1),get_string(String1,either,one-not-ml,"","",%ML_db,
@@ -286,8 +290,8 @@ critique(String00,String01,Reasons_per_paragraph,Numbers,ML_db,Critique1) :-
 	length(List2,Reasons_per_paragraph),
 	append(List2,_,Numbers),
 
-	string_codes(String001,String00),
-	writeln(String001),
+	%%string_codes(String001,String00),
+	%%writeln(String001),
 
 	retractall(critique3(_)),
 	assertz(critique3([])),
@@ -567,7 +571,7 @@ get_string(Prompt2,Flag1,Flag2,ML_db0,ML_db1,String2) :-
 		%%trace,
 		SepandPad="&#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\\"!'0123456789",
 	%%(repeat,
-	(Flag2=one-not-ml-ref->writeln("Note: Enter in-text reference using AGPS, e.g.\n The first work supports the second work (Surname 2000, pp. 18-9).\n Surname (2000, pp. 18-9) states that ...");true),
+	(Flag2=one-not-ml-ref->(concat_list(["Note: Enter in-text reference using AGPS, e.g.\n","The first work supports the second work (Surname 2000, pp. 18-9).\n","Surname (2000, pp. 18-9) states that ...\n","Remember to use words like \"also\", \"moreover\" and \"in addition\" before the sentence."],String_a1),writeln(String_a1));true),
 	writeln(Prompt2),read_string(user_input, "\n", "\r", _End, String2aa),%%not(String2aa=""),
 	%%String2aa=[String2aaa],
 	downcase_atom(String2aa,String3),split_string(String3, SepandPad, SepandPad, String4),
@@ -587,7 +591,7 @@ maplist(equals_empty_list,Item12)
 	((Flag1=negative->((member(Item1,String4),member(Item1,Neg_term_list))->true;(writeln("Error: Contains no negative term, one of:"),writeln(Neg_term_list),fail));true)->true;Flag1=either)),
 	(Flag2=one-not-ml->String2=String2aa;
 	(Flag2=one-not-ml-ref->
-	(refs(R1),writeln("What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\n Don't forget <i></i> and delimit multiple references with \"\\n\"."),writeln("Existing references (copy one or many delimited with \"\\n\":"), findall(_,(member(R11,R1),writeln(R11)),_),read_string(user_input, "\n", "\r", _End, String2r),not(String2r=""),%%downcase_atom(String2r,_String3r),
+	(refs(R1),writeln("What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\n"),writeln("Existing references (copy one or many delimited with \"\\n\"):"), findall(_,(member(R11,R1),writeln(R11)),_),read_string(user_input, "\n", "\r", _End, String2r),not(String2r=""),%%downcase_atom(String2r,_String3r),
 	String2=String2aa,split_string(String2r,"\n\r","\n\r",String2r3),
 	%%trace,
 	retractall(refs(_)),maplist(append,[[R1,String2r3]],[String2r21]),

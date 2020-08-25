@@ -32,7 +32,20 @@ short_essay_helper("file.txt",5).
 ```
 about essay "file.txt" for 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example of Essay Helper and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.html">walk_through2.html</a> as examples of Essay Helper 2.
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example of Essay Helper.
+
+# Installing and Running Essay Helper 2
+
+* Essay Helper 2 outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first.
+* Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
+* Run swipl
+* In swipl, run with: 
+```
+short_essay_helper("Author's Heading",5).
+```
+with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
+
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a>, <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.html">walk_through2.html</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2-output.txt">walk_through2-output.txt</a> as examples of Essay Helper 2.
 
 # Authors
 
