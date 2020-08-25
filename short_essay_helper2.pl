@@ -208,7 +208,7 @@ Critique1=[Numbera11,[Para_topic_sent,[_Number2a,_Number3a,_String3,_String3a,St
 	
 concat_list([Para_topic_sent,"  ",String5a,"  ",String5a1,"  "],Essay0),output_critique(Numbera11,Critique2,String5a1,Essay0,Essay1),
 	
-		concat_list([Essay1,"\n"],%%Essay22)
+		concat_list([Essay1,Para_topic_sent,"\n"],%%Essay22)
 
 %%),
 Essay23)),Essay3),
