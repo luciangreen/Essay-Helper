@@ -1,46 +1,42 @@
-?- short_essay_helper("file.txt",4).
-[["","",["heading"]],["","",["a"]],["","",["here"]],[1,1,["a","b","c","d"]],[1,2,["e","f","g","h"]]]
-The Short Essay Helper will you help structure and write your essay about "Heading" with 4 reasons per paragraph.
+?- short_essay_helper("h",4).
+The Short Essay Helper will you help structure and write your essay about "h" with 4 reasons per paragraph.
 The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.
-The Helper will output the file, "file202082420618.76178503036499.txt" used for marking.  After using the Helper, run Text To Breasonings.  Return "file202082420618.76178503036499.txt" and the two breasoning dictionaries for marking.
-Heading
 
-1a. here1
-
-1. a b c d. e f g h.
-What is group 1 of 5 in the exposition that groups ideas about "Heading"? 
+What is group 1 of 5 in the exposition that groups ideas about "h"? 
 |: 1
-What is group 2 of 5 in the exposition that groups ideas about "Heading"? 
+What is group 2 of 5 in the exposition that groups ideas about "h"? 
 |: 2
-What is group 3 of 5 in the exposition that groups ideas about "Heading"? 
+What is group 3 of 5 in the exposition that groups ideas about "h"? 
 |: 3
-What is group 4 of 5 in the exposition that groups ideas about "Heading"? 
+What is group 4 of 5 in the exposition that groups ideas about "h"? 
 |: 4
-What is group 5 of 5 in the exposition that groups ideas about "Heading"? 
+What is group 5 of 5 in the exposition that groups ideas about "h"? 
 |: 5
 <Exposition Paragraph 1 of 5 - "1"> <Reason 1 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "1"? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 |: 1
 How does the quote you entered ("1") relate to the paragraph topic "1"? 
 |: 1
 <Exposition Paragraph 1 of 5 - "1"> <Reason 2 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "1"? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 |: 2
 How does the quote you entered ("2") relate to the paragraph topic "1"? 
@@ -48,13 +44,14 @@ How does the quote you entered ("2") relate to the paragraph topic "1"?
 <Exposition Paragraph 1 of 5 - "1"> <Reason 3 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "1"? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 |: 3
@@ -63,13 +60,14 @@ How does the quote you entered ("3") relate to the paragraph topic "1"?
 <Exposition Paragraph 1 of 5 - "1"> <Reason 4 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "1"? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -79,13 +77,14 @@ How does the quote you entered ("4") relate to the paragraph topic "1"?
 <Exposition Paragraph 2 of 5 - "2"> <Reason 1 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "2"? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -96,13 +95,14 @@ How does the quote you entered ("1") relate to the paragraph topic "2"?
 <Exposition Paragraph 2 of 5 - "2"> <Reason 2 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "2"? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -113,13 +113,14 @@ How does the quote you entered ("2") relate to the paragraph topic "2"?
 <Exposition Paragraph 2 of 5 - "2"> <Reason 3 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "2"? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -130,13 +131,14 @@ How does the quote you entered ("3") relate to the paragraph topic "2"?
 <Exposition Paragraph 2 of 5 - "2"> <Reason 4 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "2"? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -147,13 +149,14 @@ How does the quote you entered ("4") relate to the paragraph topic "2"?
 <Exposition Paragraph 3 of 5 - "3"> <Reason 1 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "3"? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -164,13 +167,14 @@ How does the quote you entered ("1") relate to the paragraph topic "3"?
 <Exposition Paragraph 3 of 5 - "3"> <Reason 2 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "3"? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -181,13 +185,14 @@ How does the quote you entered ("2") relate to the paragraph topic "3"?
 <Exposition Paragraph 3 of 5 - "3"> <Reason 3 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "3"? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -198,13 +203,14 @@ How does the quote you entered ("3") relate to the paragraph topic "3"?
 <Exposition Paragraph 3 of 5 - "3"> <Reason 4 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "3"? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -215,13 +221,14 @@ How does the quote you entered ("4") relate to the paragraph topic "3"?
 <Exposition Paragraph 4 of 5 - "4"> <Reason 1 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "4"? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -232,13 +239,14 @@ How does the quote you entered ("1") relate to the paragraph topic "4"?
 <Exposition Paragraph 4 of 5 - "4"> <Reason 2 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "4"? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -249,13 +257,14 @@ How does the quote you entered ("2") relate to the paragraph topic "4"?
 <Exposition Paragraph 4 of 5 - "4"> <Reason 3 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "4"? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -266,13 +275,14 @@ How does the quote you entered ("3") relate to the paragraph topic "4"?
 <Exposition Paragraph 4 of 5 - "4"> <Reason 4 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "4"? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -283,13 +293,14 @@ How does the quote you entered ("4") relate to the paragraph topic "4"?
 <Exposition Paragraph 5 of 5 - "5"> <Reason 1 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "5"? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -300,13 +311,14 @@ How does the quote you entered ("1") relate to the paragraph topic "5"?
 <Exposition Paragraph 5 of 5 - "5"> <Reason 2 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "5"? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -317,13 +329,14 @@ How does the quote you entered ("2") relate to the paragraph topic "5"?
 <Exposition Paragraph 5 of 5 - "5"> <Reason 3 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "5"? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -334,13 +347,14 @@ How does the quote you entered ("3") relate to the paragraph topic "5"?
 <Exposition Paragraph 5 of 5 - "5"> <Reason 4 of 4>
 The Helper will ask you how the quote you are about to enter relates to the paragraph topic.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote about the paragraph topic "5"? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -348,23 +362,19 @@ Existing references (copy one or many delimited with "\n":
 |: 4
 How does the quote you entered ("4") relate to the paragraph topic "5"? 
 |: 4
-Do you agree or disagree with "Heading" (a/d) ? 
+Do you agree or disagree with "h" (a/d) ? 
 |: a
-Heading
-
-1a. here1
-
-1. a b c d. e f g h.
 <Critique Paragraph 1 of 5> <Reason 1 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -373,30 +383,32 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
 4
 |: 1
-How does the comment "1" relate to the essay topic "Heading"? 
+How does the comment "1" relate to the essay topic "h"? 
 |: 1
 <Critique Paragraph 1 of 5> <Reason 2 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -405,13 +417,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -426,13 +439,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 1 of 5> <Reason 3 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -441,13 +455,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -463,13 +478,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 1 of 5> <Reason 4 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -478,13 +494,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -501,13 +518,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 2 of 5> <Reason 1 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -516,30 +534,32 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
 4
 |: 1
-How does the comment "1" relate to the essay topic "Heading"? 
+How does the comment "1" relate to the essay topic "h"? 
 |: 1
 <Critique Paragraph 2 of 5> <Reason 2 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -548,13 +568,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -569,13 +590,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 2 of 5> <Reason 3 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -584,13 +606,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -606,13 +629,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 2 of 5> <Reason 4 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -621,13 +645,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -644,13 +669,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 3 of 5> <Reason 1 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -659,30 +685,32 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
 4
 |: 1
-How does the comment "1" relate to the essay topic "Heading"? 
+How does the comment "1" relate to the essay topic "h"? 
 |: 1
 <Critique Paragraph 3 of 5> <Reason 2 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -691,13 +719,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -712,13 +741,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 3 of 5> <Reason 3 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -727,13 +757,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -749,13 +780,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 3 of 5> <Reason 4 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -764,13 +796,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -787,13 +820,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 4 of 5> <Reason 1 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -802,30 +836,32 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
 4
 |: 1
-How does the comment "1" relate to the essay topic "Heading"? 
+How does the comment "1" relate to the essay topic "h"? 
 |: 1
 <Critique Paragraph 4 of 5> <Reason 2 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -834,13 +870,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -855,13 +892,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 4 of 5> <Reason 3 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -870,13 +908,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -892,13 +931,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 4 of 5> <Reason 4 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -907,13 +947,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -930,13 +971,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 5 of 5> <Reason 1 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -945,30 +987,32 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 1
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
 4
 |: 1
-How does the comment "1" relate to the essay topic "Heading"? 
+How does the comment "1" relate to the essay topic "h"? 
 |: 1
 <Critique Paragraph 5 of 5> <Reason 2 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 2
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -977,13 +1021,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -998,13 +1043,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 5 of 5> <Reason 3 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 3
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -1013,13 +1059,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -1035,13 +1082,14 @@ How does "4" connect to "1"?
 <Critique Paragraph 5 of 5> <Reason 4 of 4>
 The Helper will ask you for your comment on the quote you are about to enter.
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the paraphrased quote to comment on? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -1050,13 +1098,14 @@ Existing references (copy one or many delimited with "\n":
 Is your comment from a quote (y/n)? 
 |: y
 Note: Enter in-text reference using AGPS, e.g.
- The first work supports the second work (Surname 2000, pp. 18-9).
- Surname (2000, pp. 18-9) states that ...
+The first work supports the second work (Surname 2000, pp. 18-9).
+Surname (2000, pp. 18-9) states that ...
+Remember to use words like "also", "moreover" and "in addition" before the sentence.
 What is the comment that is from the quote? 
 |: 4
 What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.
- Don't forget <i></i> and delimit multiple references with "\n".
-Existing references (copy one or many delimited with "\n":
+
+Existing references (copy one or many delimited with "\n"):
 1
 2
 3
@@ -1070,24 +1119,24 @@ Please select a comment to connect the comment "4" to:
 |: 1
 How does "4" connect to "1"? 
 |: 4
-What is the future area of research from your essay about "Heading"? 
+What is the future area of research from your essay about "h"? 
 |: b
-"Heading
+"h
 
-I will critically analyse Heading.  I will agree with Heading.  1  1  1  1  1  
+I will critically analyse h.  I will agree with h.  1  1  1  1  1  
 
+I will expose h in this half.  1  1  2  2  3  3  4  4  
 1  1  2  2  3  3  4  4  
 1  1  2  2  3  3  4  4  
 1  1  2  2  3  3  4  4  
 1  1  2  2  3  3  4  4  
-1  1  2  2  3  3  4  4  
-1  1  1    2  4  4    3  4  4    4  4  4    
+I will agree with h in this half.  1  1  1    2  4  4    3  4  4    4  4  4    
 1  1  1    2  4  4    3  4  4    4  4  4    
 1  1  1    2  4  4    3  4  4    4  4  4    
 1  1  1    2  4  4    3  4  4    4  4  4    
 1  1  1    2  4  4    3  4  4    4  4  4    
 
-1  1  1  1  1  I have agreed with Heading.  b
+1  1  1  1  1  I have agreed with h.  b
 
 Bibliography
 
@@ -1097,4 +1146,3 @@ Bibliography
 4
 "
 true.
-
