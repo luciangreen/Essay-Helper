@@ -229,7 +229,8 @@ _CNumber2aa,_CNumber3aa,CString5a1a,
 %%trace,
 (Essay33=[]->concat_list([Essay1%%,"  "
 ],Essay2);%%(Essay33=[Essay3]->concat_list([Essay1,"  ",Essay3],Essay2);%%(Essay33=[Essay3|[E33]]-> concat_list([Essay1,"  ",Essay3,E33],Essay2);
-(Essay33=[Essay3|E33], concat_list(E33,E34),concat_list([Essay1,"  ",Essay3,E34],Essay2)))
+(Essay33=[Essay3|E33], concat_list(E33,E34),concat_list([Essay1,%%"  ",
+Essay3,E34],Essay2)))
 %%)
 %%)
 .
