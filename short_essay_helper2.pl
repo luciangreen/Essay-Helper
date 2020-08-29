@@ -84,7 +84,7 @@ writeln1(Essay),
 	close(Stream1))
 	.
 
-%% replace("a\nb","\n","<br>n",F).
+%% replace("a\nb","\n","<br>\n",F).
 %% F="a<br>\nb<br>\n".
 
 replace(A,Find,Replace,F) :- 	
