@@ -32,7 +32,8 @@ choose(List0,Item) :-
 	downcase_atom(E,E1),
 	atom_string(E1,E2),
 	string_concat(E2,D,Item2),
-	string_concat(Item2,".",Item).
+	string_concat(Item2,""%%"."
+	,Item).
 	
 choose1(List0,Item) :-
 	random_member(Item,List0).
@@ -66,6 +67,10 @@ short_essay_helper(%%Filex,
 
 		%%prepare_file_for_ml(String00,String02a)
 		),String00),
+		
+		%%trace,
+		%%writeln1(String00),
+		%%notrace,
 	
 %%writeln1(String02),
 
@@ -77,7 +82,8 @@ short_essay_helper(%%Filex,
 	exposition(String00,String01,Reasons_per_paragraph,Numbers,String02,Exposition),
 
 	%%concat_list(["Do you agree or disagree with ",String01," (a/d) ? "],String2ad),%%get_string(String2ad,either,one-not-ml,"","",String3ad),
-	choose(["a","d"],String3ad),
+	choose1(["a"%%,"d"
+	],String3ad),
 	
 	(String3ad="a"->
 	(retractall(agree_disagree(_)),
@@ -95,7 +101,7 @@ agree_disagree(Pole),
 	%%get_string(Future_research_prompt,either,one-not-ml,"","",Future_research),
 	choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
 	choose(String00a4,String00a5),
-	concat_list(["In ",String01,", automation should apply to ",String00a5," (",String00a2,", p ",N_page_ref,")"],Future_research),
+	concat_list(["In ",String01,", automation should apply to ",String00a5," (",String00a2,", p ",N_page_ref,")."],Future_research),
 	reference(String00a1),
 	
 term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
@@ -302,9 +308,10 @@ exposition(String00,_String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :
 	findall([Number1,Exposition2],(
 		%%trace,
 member(Number1,List1),%%concat_list(["What is group ",Number1," of 5 in the exposition that groups ideas about ",String01,"? "],String1),%%get_string(String1,either,one-not-ml,"","",%ML_db,Exposition2)
+%% ** Doesn't print this
 choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
 	choose(String00a4,String00a5),
-	concat_list([String00a5," (",String00a2,", p ",N_page_ref,")"],Exposition2),
+	concat_list([String00a5," (",String00a2,", p ",N_page_ref,") "],Exposition2),
 	reference(String00a1)),Exposition3),
 	
 
@@ -324,7 +331,7 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	%%concat_list(["What is the paraphrased quote about the paragraph topic ",Item1,"? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
 	choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
 	choose(String00a4,String00a5),
-	concat_list([String00a5," (",String00a2,", p ",N_page_ref,")"],String5a),
+	concat_list([Item1," is because ",String00a5," (",String00a2,", p ",N_page_ref,")."],String5a),
 	reference(String00a1),
 	
 	%%concat_list(["How does the quote you entered (",String5a,") relate to the paragraph topic ",Item1,"? "],String4),
@@ -335,7 +342,7 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	
 		choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
 	choose(String00a41,String00a51),
-	concat_list([Item1," is because ",String00a51," (",String00a21,", p ",N_page_ref1,")"],String5),
+	concat_list([Item1," is because ",String00a51," (",String00a21,", p ",N_page_ref1,")."],String5),
 	reference(String00a11)
 )
 	->true;exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5).
@@ -391,7 +398,7 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	
 			choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
 	choose(String00a41,String00a51),
-	concat_list([String00a51," (",String00a21,", p ",N_page_ref1,")"],String5a),
+	concat_list([String00a51," (",String00a21,", p ",N_page_ref1,")."],String5a),
 	reference(String00a11),
 
 	%%concat_list(["Is your comment from a quote (y/n)? "],String2yn),get_string(String2yn,either,one-not-ml,"","",String3yn),
@@ -413,7 +420,7 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	
 				choose_sentence_range(String00,N_page_ref2,String00a12,String00a22,_String00a32,String00a42),
 	choose(String00a42,String00a52),
-	concat_list([String00a52," (",String00a22,", p ",N_page_ref2,")"],String5a1),
+	concat_list([String00a52," (",String00a22,", p ",N_page_ref2,")."],String5a1),
 	reference(String00a12)
 
 		)
@@ -424,7 +431,7 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 
 				choose_sentence_range(String00,N_page_ref3,String00a13,String00a23,_String00a33,String00a43),
 	choose(String00a43,String00a53),
-	concat_list([String00a53," (",String00a23,", p ",N_page_ref3,")"],String5a1),
+	concat_list([String00a53," (",String00a23,", p ",N_page_ref3,")."],String5a1),
 	reference(String00a13)
 
 )),
@@ -436,9 +443,9 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%downcase_and_split(String01,String01ds),
 	%%get_string(Topic_paragraph_link_prompt,either,one-not-ml,String5a1ds,String01ds,Topic_paragraph_link)
 	
-				choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
+	string_concat(String5a1_az,".",String5a1),			choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
 	choose(String00a44,String00a54),
-	concat_list([String01," is because of ",String00a54," (",String00a24,", p ",N_page_ref4,")"],Topic_paragraph_link),
+	concat_list([String01," is because of ",String5a1_az," because of ",String00a54," (",String00a24,", p ",N_page_ref4,")."],Topic_paragraph_link),
 	reference(String00a14)
 
 	/**
@@ -509,7 +516,7 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	%%trace,
 					choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
 	choose(String00a44,String00a54),
-	concat_list([String00a54," (",String00a24,", p ",N_page_ref4,")"],String5a),
+	concat_list([String00a54," (",String00a24,", p ",N_page_ref4,")."],String5a),
 	reference(String00a14),
 
 	
@@ -531,7 +538,7 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	
 						choose_sentence_range(String00,N_page_ref5,String00a15,String00a25,_String00a35,String00a45),
 	choose(String00a45,String00a55),
-	concat_list([String00a55," (",String00a25,", p ",N_page_ref5,")"],String5a1),
+	concat_list([String00a55," (",String00a25,", p ",N_page_ref5,")."],String5a1),
 	reference(String00a15)
 
 	%%,trace
@@ -599,9 +606,11 @@ choose1(List1,ConnectionNumber),
 	%%concat_list(["How does ",LastCStrings," connect to ",CString5a1a,"? "],ConnectionPrompt),
 
 	%%get_string(ConnectionPrompt,either,one-not-ml,CString5a1a2,LastCStrings_a1,String5aaa)
-						choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
+
+	string_concat(LastCStrings_az,".",LastCStrings),
+	string_concat(CString5a1a_az,".",CString5a1a),						choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
 	choose(String00a46,String00a56),
-	concat_list([LastCStrings," is because of ",String00a56," (",String00a26,", p ",N_page_ref6,")"],String5aaa),
+	concat_list([LastCStrings_az," is because of ",CString5a1a_az," because of ",String00a56," (",String00a26,", p ",N_page_ref6,")."],String5aaa),
 	reference(String00a16)
 
 	

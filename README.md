@@ -74,6 +74,8 @@ short_essay_helper("Author's Heading",5).
 ```
 with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.html">walk_through3.html</a> as an example of Essay Helper 3.
+
 # Authors
 
 Lucian Green - Initial programmer - <a href="https://www.lucianacademy.com/">Lucian Academy</a>
