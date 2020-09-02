@@ -60,7 +60,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 * Load with ['short_essay_helper3_agps.pl'].
 * In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
-* Use BBEdit to replace `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
+* Use BBEdit to replace `"` with `'`, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
 ```
 ["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
