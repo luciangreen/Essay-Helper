@@ -59,11 +59,8 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Run swipl
 
 * Load with ['short_essay_helper3_agps.pl'].
-* In the raw_sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
-* In swipl, run the sheet feeder, which prepares the sources for the algorithm, with: 
-```
-sheet_feeder(_).
-```
+* In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
+* Use BBEdit to replace `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
 ```
 ["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
