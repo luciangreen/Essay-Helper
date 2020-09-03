@@ -21,8 +21,16 @@
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
+:- dynamic refs/1.
+:- dynamic chosen_quotes/1.
 
 choose(List0,Item) :-
+%%trace,
+	(choose2(List0,Item)->true;Item="* All quotes exhausted."),
+	%%notrace,
+	!.
+choose2(List0,Item) :-
+	chosen_quotes(Chosen_quotes1),
 	random_member(Item10,List0),
 	string_codes(Item10,List),
 	split_string(List,".\n",".\n",List2),
@@ -32,8 +40,14 @@ choose(List0,Item) :-
 	downcase_atom(E,E1),
 	atom_string(E1,E2),
 	string_concat(E2,D,Item2),
+	string_length(E2,1),
 	string_concat(Item2,""%%"."
-	,Item).
+	,Item),
+	not(member(Item,Chosen_quotes1)),
+	append(Chosen_quotes1,[Item],Chosen_quotes2),
+	retractall(chosen_quotes(_)),
+	assertz(chosen_quotes(Chosen_quotes2))
+	.
 	
 choose1(List0,Item) :-
 	random_member(Item,List0).
@@ -55,8 +69,8 @@ short_essay_helper(%%Filex,
 	retractall(refs(_)),
 	assertz(refs([])),
 
-	retractall(key_words(_)),
-	assertz(key_words([])),
+	retractall(chosen_quotes(_)),
+	assertz(chosen_quotes([])),
 
 	directory_files("sources/",F),
 	delete_invisibles_etc(F,G),
@@ -149,7 +163,7 @@ writeln1(Essay),
 	(open_s(File2,write,Stream1),
 %%	string_codes(BrDict3),
 	write(Stream1,HTML),
-	close(Stream1))
+	close(Stream1)),!
 	.
 
 %% replace("a\nb","\n","<br>\n",F).
