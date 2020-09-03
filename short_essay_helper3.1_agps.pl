@@ -60,7 +60,7 @@ short_essay_helper(%%Filex,
 
 	directory_files("sources/",F),
 	delete_invisibles_etc(F,G),
-
+%%trace,
 SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 	findall([Az,Bz,Cz,String02h3],(member(Filex1,G),
 	string_concat("sources/",Filex1,Filex),
@@ -73,13 +73,15 @@ SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 		%%trace,
 		findall(String02cb,(member(String02ca,String02c),split_string(String02ca, ".\n\r", ".\n\r", String02cb)),String02cc),
 		maplist(append,[String02cc],[String02d]),
-		findall(String02f1,(member(String02d1,String02d),
+		findall(String02d1,(member(String02d1,String02d),
 		downcase_atom(String02d1,String02e),
 		atom_string(String02e,String02f1),
 		split_string(String02f1, SepandPad, SepandPad, String02e1),
 		findall(String02g,(member(Key_words1,Key_words),
 			%%trace,
-			findall(Key_words1,(member(Key_words1,String02e1)),String02g)
+		downcase_atom(Key_words1,Key_words11),
+		atom_string(Key_words11,Key_words12),
+findall(Key_words12,(member(Key_words12,String02e1)),String02g)
 		),String02i),
 		not(maplist(equals_empty_list,String02i))
 
@@ -90,10 +92,12 @@ SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 		%%,
 
 		findall(String02h2,(member([Ay,By,Cy,String02h1],String00z1),
-		maplist(append,[[[Ay,By,Cy],String02h1]],[String02h2])),String00),
+		(String02h1=[]->String02h2=[];
+		maplist(append,[[[Ay,By,Cy],String02h1]],[String02h2]))
+		),String00z),
 
 				%%maplist(append,[[String00z1]],String00),
-
+maplist(append,[String00z],String00),
 		%%trace,
 		%%writeln1(String00),
 		%%notrace,
