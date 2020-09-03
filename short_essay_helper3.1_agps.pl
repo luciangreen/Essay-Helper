@@ -47,7 +47,7 @@ list([]) --> [].
 list([L|Ls]) --> [L], list(Ls).
 
 short_essay_helper(%%Filex,
-	String01,
+	String01,Key_words,
 	Reasons_per_paragraph) :-
 	retractall(critique3(_)),
 	assertz(critique3([])),
@@ -61,16 +61,39 @@ short_essay_helper(%%Filex,
 	directory_files("sources/",F),
 	delete_invisibles_etc(F,G),
 
-	findall(String02a,(member(Filex1,G),
+SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
+	findall([Az,Bz,Cz,String02h3],(member(Filex1,G),
 	string_concat("sources/",Filex1,Filex),
 		phrase_from_file_s(string(String00a), Filex),
 		string_codes(String02b,String00a),
-		atom_to_term(String02b,String02a,[])
-		%%split_string(String00, "\n\r", "\n\r", [String01a|_]),
+		atom_to_term(String02b,String02a,[]),
+		
+		String02a=[Az,Bz,Cz|String02c],
+		%%String02c=String02d,
+		%%trace,
+		findall(String02cb,(member(String02ca,String02c),split_string(String02ca, ".\n\r", ".\n\r", String02cb)),String02cc),
+		maplist(append,[String02cc],[String02d]),
+		findall(String02f1,(member(String02d1,String02d),
+		downcase_atom(String02d1,String02e),
+		atom_string(String02e,String02f1),
+		split_string(String02f1, SepandPad, SepandPad, String02e1),
+		findall(String02g,(member(Key_words1,Key_words),
+			%%trace,
+			findall(Key_words1,(member(Key_words1,String02e1)),String02g)
+		),String02i),
+		not(maplist(equals_empty_list,String02i))
+
+			),String02h3)
 
 		%%prepare_file_for_ml(String00,String02a)
-		),String00),
-		
+		),String00z1),
+		%%,
+
+		findall(String02h2,(member([Ay,By,Cy,String02h1],String00z1),
+		maplist(append,[[[Ay,By,Cy],String02h1]],[String02h2])),String00),
+
+				%%maplist(append,[[String00z1]],String00),
+
 		%%trace,
 		%%writeln1(String00),
 		%%notrace,
@@ -460,7 +483,7 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	get_string(String4,either,two,Item1a,String3aa,String5)
 	**/
 	)
-	->true;critique2(String00,ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,Topic_paragraph_link).
+	->true;critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,Topic_paragraph_link).
 
 
 

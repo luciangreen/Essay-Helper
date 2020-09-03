@@ -74,6 +74,32 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 * See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.html">walk_through3.html</a> as an example of Essay Helper 3.
 
+
+
+
+# Installing and Running Essay Helper 3.1 - Random Essay Generator with Relevance - AGPS Referencing
+
+* Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, all of which to search for in each sentence.
+* Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
+* Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
+* Run swipl
+
+* Load with ['short_essay_helper3.1_agps.pl'].
+* In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
+* Use BBEdit to replace `"` with `'`, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
+* Check the new source files in the sources folder are in the format:
+```
+["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
+```
+* (Insert the first item, the reference for the source, in the required referencing style in double quotes, inert the part of the in-text reference as the second item, insert the first page number of the paper from the book as the third item and check the pages are separated in double quotes as above.  You should remove headers, etc. from each page so that they are not used in the essay.  For this version, move ends of sentences over pages onto the first page.)
+* In swipl, run with:
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5).
+```
+with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
+
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
+
 # Authors
 
 Lucian Green - Initial programmer - <a href="https://www.lucianacademy.com/">Lucian Academy</a>

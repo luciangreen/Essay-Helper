@@ -1,6 +1,6 @@
-["ref","author 2000",1,"a
+["ref","author 2000",1,"critical evaluation.
 a","B
 b
-b","C
+evaluation that is critical a.","C
 c
 c"]
