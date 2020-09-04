@@ -642,6 +642,19 @@ concat_list(CStrings11,_CStrings12),
 %%concat_list(["Please select a comment to connect the comment ",LastCStrings," to:","\n",CStrings12],ConnectionNumberPrompt),
 %%get_number(ConnectionNumberPrompt,ConnectionNumber),
 %numbers(
+
+%% *** Choose phrase which is similar to a previous phrase
+
+%% findall([N," - ",CString5a1,"\n"],(member(N,List1),get_item_n(Critique33,N,[CNumber2a,CNumber3a,_CString3,_CString3a,_CString5a,_CString3y,_CString3ay,CString5a1]),
+ 
+ /**SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",findall([CString5a1Z2,CString5a1Z5],(downcase_atom(CString5a1,CString5a1Z1),atom_string(CString5a1Z1,CString5a1Z2),split_string(CString5a1,SepandPad,SepandPad,CString5a1Z3),
+ Connectors=
+		["the","a","i","on","with","of","an","for","to",
+		"was","were","and","in","my","from","out","by"],
+		%% find distances between terms, closest to sent
+	subtract(CString5a1Z3,Connectors,CString5a1Z5),
+	),CString5a1Z4),
+**/
 choose1(List1,ConnectionNumber),
 	member([ConnectionNumber,CNumber2aa,CNumber3aa,CString5a1a],CStringsRR),
 	
