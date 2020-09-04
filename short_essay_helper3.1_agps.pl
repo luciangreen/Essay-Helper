@@ -25,12 +25,12 @@
 :- dynamic chosen_quotes/1.
 
 choose(List0,Item) :-
-%%trace,
-	(choose2(List0,Item)->true;Item="* All quotes exhausted."),
+%%trace,(
+	choose2(List0,Item),%%->true;Item="* All quotes exhausted."),
 	%%notrace,
 	!.
 choose2(List0,Item) :-
-	chosen_quotes(Chosen_quotes1),
+	%%chosen_quotes(Chosen_quotes1),
 	random_member(Item10,List0),
 	string_codes(Item10,List),
 	split_string(List,".\n",".\n",List2),
@@ -42,11 +42,11 @@ choose2(List0,Item) :-
 	string_concat(E2,D,Item2),
 	string_length(E2,1),
 	string_concat(Item2,""%%"."
-	,Item),
-	not(member(Item,Chosen_quotes1)),
-	append(Chosen_quotes1,[Item],Chosen_quotes2),
-	retractall(chosen_quotes(_)),
-	assertz(chosen_quotes(Chosen_quotes2))
+	,Item)
+	%%,not(member(Item,Chosen_quotes1)),
+	%%append(Chosen_quotes1,[Item],Chosen_quotes2),
+	%%retractall(chosen_quotes(_)),
+	%%assertz(chosen_quotes(Chosen_quotes2))
 	.
 	
 choose1(List0,Item) :-
@@ -82,7 +82,8 @@ SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 		string_codes(String02b,String00a),
 		atom_to_term(String02b,String02a,[]),
 		
-		String02a=[Az,Bz,Cz|String02c],
+		(String02a=[Az,Bz,Cz|String02c]->true;
+		(concat_list(["Error: ",Filex," not in format [\"Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\",\"Surname, A 2000\",First_Page_Num,\"<first page>\",\"<second page>\",...\"]"],Notification1),writeln(Notification1),abort)),
 		%%String02c=String02d,
 		%%trace,
 		findall(String02cb,(member(String02ca,String02c),split_string(String02ca, ".\n\r", ".\n\r", String02cb)),String02cc),
@@ -110,10 +111,16 @@ findall(Key_words12,(member(Key_words12,String02e1)),String02g)
 		maplist(append,[[[Ay,By,Cy],String02h1]],[String02h2]))
 		),String00z),
 
+delete(String00z,[],String00),
+
+term_to_atom(Key_words,Key_words_a),
+atom_string(Key_words_a,Key_words_b),		
+		(String00=[]->(concat_list(["Error: No files in source folder or no instances of keywords ",Key_words_b," in files in source folder."],Notification2),writeln(Notification2),abort);true),
+
 				%%maplist(append,[[String00z1]],String00),
-maplist(append,[String00z],String00),
+%%maplist(append,[String00z],String00),
 		%%trace,
-		%%writeln1(String00),
+		%writeln1(String00),
 		%%notrace,
 	
 %%writeln1(String02),

@@ -8,7 +8,7 @@ Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph
 * walk_through.txt - example walkthrough of the algorithm (no output)
 * short_essay_helper2.pl - the Essay Helper without paraphrasing checking, and outputs an HTML essay with ordered bibliography.
 * short_essay_helper3.pl - the Essay Helper generates random essays from a number of sources without paraphrasing checking, and outputs an HTML essay with ordered bibliography.
-* short_essay_helper3.pl - Like Essay Helper 3, but finds sentences containing all keywords given.
+* short_essay_helper3.pl - Like Essay Helper 3, but finds sentences containing any keywords given.
 
 # Getting Started
 
@@ -80,7 +80,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 # Installing and Running Essay Helper 3.1 - Random Essay Generator with Relevance - AGPS Referencing
 
-* Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, all of which to search for in each sentence.
+* Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, any of which to search for in each sentence.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * Run swipl

@@ -1,6 +1,1 @@
-["ref","author 2000",1,"a
-a","B
-meaning is use
-b","C
-c
-c"]
+["ref","author 2000",1,"Meanings uses."]

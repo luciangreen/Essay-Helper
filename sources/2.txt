@@ -1,6 +1,1 @@
-["ref","author 2000",1,"critical evaluation.
-a","B
-b
-evaluation that is critical a.","C
-c
-c"]
+["ref","author 2000",1,"Critical meaning."]
