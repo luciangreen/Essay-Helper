@@ -393,7 +393,7 @@ member(Number1,List1),%%concat_list(["What is group ",Number1," of 5 in the expo
 %% ** Doesn't print this
 %%choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
 	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
-	concat_list(["\"",String00a5,"\" (",String00a2,", p. ",N_page_ref,") "],Exposition2),
+	concat_list(["",String00a5," (",String00a2,", p. ",N_page_ref,") "],Exposition2),
 	reference(String00a1)),Exposition3),
 	
 
@@ -413,7 +413,7 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	%%concat_list(["What is the paraphrased quote about the paragraph topic ",Item1,"? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
 	%%choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
 	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
-	concat_list([Item1," because \"",String00a5,"\" (",String00a2,", p. ",N_page_ref,")."],String5a),
+	concat_list([Item1," is because ",String00a5," (",String00a2,", p. ",N_page_ref,")."],String5a),
 	reference(String00a1),
 	
 	%%concat_list(["How does the quote you entered (",String5a,") relate to the paragraph topic ",Item1,"? "],String4),
@@ -424,7 +424,7 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	
 		%%choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
 	choose(N_page_ref1,String00a11,String00a21,_String00a31,_String00a41,String00a51),
-	concat_list([Item1," because \"",String00a51,"\" (",String00a21,", p. ",N_page_ref1,")."],String5),
+	concat_list([Item1," is because \"",String00a51,"\" (",String00a21,", p. ",N_page_ref1,")."],String5),
 	reference(String00a11)
 )
 	->true;exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5).
@@ -530,7 +530,7 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%choose(N_page_ref4,String00a14,String00a24,_String00a34,String00a44,String00a54),
 	split_string(String01,"(","(",[String01_a|_]),
 	
-	concat_list([String01_a," because ",String5a1_az,"."%% because of ",String00a54," (",String00a24,", p. ",N_page_ref4,")."
+	concat_list([String01_a," is because ",String5a1_az,"."%% because of ",String00a54," (",String00a24,", p. ",N_page_ref4,")."
 	],Topic_paragraph_link)
 	%%reference(String00a14)
 
@@ -602,7 +602,7 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	%%trace,
 					%%choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
 	choose(N_page_ref4,String00a14,String00a24,_String00a34,_String00a44,String00a54),
-	concat_list([String00a54," (",String00a24,", p. ",N_page_ref4,")."],String5a),
+	concat_list(["\"",String00a54,"\" (",String00a24,", p. ",N_page_ref4,")."],String5a),
 	reference(String00a14),
 
 	
@@ -624,7 +624,7 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	
 						%%choose_sentence_range(String00,N_page_ref5,String00a15,String00a25,_String00a35,String00a45),
 	choose(N_page_ref5,String00a15,String00a25,_String00a35,_String00a45,String00a55),
-	concat_list([String00a55," (",String00a25,", p. ",N_page_ref5,")."],String5a1),
+	concat_list(["\"",String00a55,"\" (",String00a25,", p. ",N_page_ref5,")."],String5a1),
 	reference(String00a15)
 
 	%%,trace
@@ -707,12 +707,14 @@ choose1(List1,ConnectionNumber),
 	%%get_string(ConnectionPrompt,either,one-not-ml,CString5a1a2,LastCStrings_a1,String5aaa)
 
 	string_concat(LastCStrings_az,".",LastCStrings),
-	string_concat(CString5a1a_az,".",CString5a1a),						%%choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
+	string_concat(CString5a1a_az1,".",CString5a1a),						%%choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
 	
 		split_string(LastCStrings_az,"(","(",[LastCStrings_az_a|_]),
 
+replace(CString5a1a_az1,"\"","",CString5a1a_az),
+replace(LastCStrings_az_a,"\"","",LastCStrings_az_a1),
 choose(_N_page_ref6,String00a16,_String00a26,_String00a36,_String00a46,_String00a56),
-	concat_list([LastCStrings_az_a," because ",CString5a1a_az,"."%%" because ",String00a56," (",String00a26,", p. ",N_page_ref6,")."
+	concat_list([LastCStrings_az_a1," because ",CString5a1a_az,"."%%" because ",String00a56," (",String00a26,", p. ",N_page_ref6,")."
 	],String5aaa),
 	reference(String00a16)
 
