@@ -23,18 +23,26 @@
 :- dynamic agree_disagree/1.
 :- dynamic refs/1.
 :- dynamic chosen_quotes/1.
+:- dynamic string00_z/1.
 
-choose(List0,Item) :-
-%%trace,(
-	choose2(List0,Item),%%->true;Item="* All quotes exhausted."),
+choose(N2,B,B1,B2,C,Item) :-
+%%trace,
+(
+	choose2(N2,B,B1,B2,C,Item)->true;(Item="* All quotes exhausted. (*)"),N2=0,B="()",B1="()",B2=0,C=""),
 	%%notrace,
 	!.
-choose2(List0,Item) :-
+choose2(N2,B,B1,B2,List0,Item) :-
+%%trace,
+	string00_z(String00),
+	choose_sentence_range(String00,N2,B,B1,B2,List0),
 	%%chosen_quotes(Chosen_quotes1),
-	random_member(Item10,List0),
+	%%random_
+	member(Item10,List0),
 	string_codes(Item10,List),
+	%%notrace,
 	split_string(List,".\n",".\n",List2),
-	random_member(Item1,List2),
+	%%random_
+	member(Item1,List2),
 	string_concat(E,D,Item1),
 	string_length(E,1),
 	downcase_atom(E,E1),
@@ -42,7 +50,25 @@ choose2(List0,Item) :-
 	string_concat(E2,D,Item2),
 	string_length(E2,1),
 	string_concat(Item2,""%%"."
-	,Item)
+	,Item),
+	delete(String00,[B,B1,B2|_],String00_a),
+	delete(List0,Item10,List6),
+	findall([Item3,". "],(member(Item3,List2)),List3),
+	maplist(append,[List3],[List4]),
+	concat_list(List4,_List5),
+	append(List6,[]%%List5
+	,List7),
+	(List7=[]->String00_b=String00_a;
+	(%%trace,
+	maplist(append,[[[B,B1,B2],List7]],[String00_c]),
+	append(String00_a,[String00_c],String00_b)%%,notrace
+	)),
+	retractall(string00_z(_)),
+	assertz(string00_z(String00_b))
+	%%trace,
+	%%writeln1(String00_b),notrace
+
+
 	%%,not(member(Item,Chosen_quotes1)),
 	%%append(Chosen_quotes1,[Item],Chosen_quotes2),
 	%%retractall(chosen_quotes(_)),
@@ -63,6 +89,9 @@ list([L|Ls]) --> [L], list(Ls).
 short_essay_helper(%%Filex,
 	String01,Key_words,
 	Reasons_per_paragraph) :-
+	retractall(string00_z(_)),
+	%%assertz(string00_z([])),
+
 	retractall(critique3(_)),
 	assertz(critique3([])),
 
@@ -113,6 +142,7 @@ findall(Key_words12,(member(Key_words12,String02e1)),String02g)
 
 delete(String00z,[],String00),
 
+
 term_to_atom(Key_words,Key_words_a),
 atom_string(Key_words_a,Key_words_b),		
 		(String00=[]->(concat_list(["Error: No files in source folder or no instances of keywords ",Key_words_b," in files in source folder."],Notification2),writeln(Notification2),abort);true),
@@ -120,7 +150,8 @@ atom_string(Key_words_a,Key_words_b),
 				%%maplist(append,[[String00z1]],String00),
 %%maplist(append,[String00z],String00),
 		%%trace,
-		%writeln1(String00),
+assertz(string00_z(String00)),
+		%%writeln1(String00),
 		%%notrace,
 	
 %%writeln1(String02),
@@ -150,9 +181,9 @@ agree_disagree(Pole),
 	%%concat_list(["What is the future area of research from your essay about ",String01,"? "],Future_research_prompt),
 	%%trace,
 	%%get_string(Future_research_prompt,either,one-not-ml,"","",Future_research),
-	choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
-	choose(String00a4,String00a5),
-	concat_list(["In ",String01,", automation should apply to ",String00a5," (",String00a2,", p. ",N_page_ref,")."],Future_research),
+%%	choose_sentence_range(String00,),
+	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
+	concat_list(["In ",String01,", automation should apply to \"",String00a5,"\" (",String00a2,", p. ",N_page_ref,")."],Future_research),
 	reference(String00a1),
 	
 term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
@@ -360,9 +391,9 @@ exposition(String00,_String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :
 		%%trace,
 member(Number1,List1),%%concat_list(["What is group ",Number1," of 5 in the exposition that groups ideas about ",String01,"? "],String1),%%get_string(String1,either,one-not-ml,"","",%ML_db,Exposition2)
 %% ** Doesn't print this
-choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
-	choose(String00a4,String00a5),
-	concat_list([String00a5," (",String00a2,", p. ",N_page_ref,") "],Exposition2),
+%%choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
+	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
+	concat_list(["\"",String00a5,"\" (",String00a2,", p. ",N_page_ref,") "],Exposition2),
 	reference(String00a1)),Exposition3),
 	
 
@@ -380,9 +411,9 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	%%concat_list(["What is the sentence number of the quote about the paragraph topic ",Item1,"? "],String2a),get_number(String2a,String3a),
 	%%member1a([String3,String3a,String3aa],ML_db),
 	%%concat_list(["What is the paraphrased quote about the paragraph topic ",Item1,"? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
-	choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
-	choose(String00a4,String00a5),
-	concat_list([Item1," is because ",String00a5," (",String00a2,", p. ",N_page_ref,")."],String5a),
+	%%choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
+	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
+	concat_list([Item1," because \"",String00a5,"\" (",String00a2,", p. ",N_page_ref,")."],String5a),
 	reference(String00a1),
 	
 	%%concat_list(["How does the quote you entered (",String5a,") relate to the paragraph topic ",Item1,"? "],String4),
@@ -391,9 +422,9 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	
 	%%get_string(String4,either,one-not-ml,Item1a,String3aa,String5)
 	
-		choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
-	choose(String00a41,String00a51),
-	concat_list([Item1," is because ",String00a51," (",String00a21,", p. ",N_page_ref1,")."],String5),
+		%%choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
+	choose(N_page_ref1,String00a11,String00a21,_String00a31,_String00a41,String00a51),
+	concat_list([Item1," because \"",String00a51,"\" (",String00a21,", p. ",N_page_ref1,")."],String5),
 	reference(String00a11)
 )
 	->true;exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5).
@@ -447,9 +478,9 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%member1a([String3,String3a,String3aa],ML_db),
 	%%concat_list(["What is the paraphrased quote to comment on? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
 	
-			choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
-	choose(String00a41,String00a51),
-	concat_list([String00a51," (",String00a21,", p. ",N_page_ref1,")."],String5a),
+			%%choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
+	choose(N_page_ref1,String00a11,String00a21,_String00a31,_String00a41,String00a51),
+	concat_list(["\"",String00a51,"\" (",String00a21,", p. ",N_page_ref1,")."],String5a),
 	reference(String00a11),
 
 	%%concat_list(["Is your comment from a quote (y/n)? "],String2yn),get_string(String2yn,either,one-not-ml,"","",String3yn),
@@ -469,9 +500,9 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%trace,
 	%%get_string(String4ac,either,one-not-ml-ref,"",String3aay,String5a1)
 	
-				choose_sentence_range(String00,N_page_ref2,String00a12,String00a22,_String00a32,String00a42),
-	choose(String00a42,String00a52),
-	concat_list([String00a52," (",String00a22,", p. ",N_page_ref2,")."],String5a1),
+				%%choose_sentence_range(String00,N_page_ref2,String00a12,String00a22,_String00a32,String00a42),
+	choose(N_page_ref2,String00a12,String00a22,_String00a32,_String00a42,String00a52),
+	concat_list(["\"",String00a52,"\" (",String00a22,", p. ",N_page_ref2,")."],String5a1),
 	reference(String00a12)
 
 		)
@@ -480,10 +511,11 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%concat_list(["What is the comment? "],String4ac),%%get_string(String4ac,either,one-not-ml,"","",%%String5a,
 %%	String5a1)
 
-				choose_sentence_range(String00,N_page_ref3,String00a13,String00a23,_String00a33,String00a43),
-	choose(String00a43,String00a53),
-	concat_list([String00a53," (",String00a23,", p. ",N_page_ref3,")."],String5a1),
+				%%choose_sentence_range(String00,N_page_ref3,String00a13,String00a23,_String00a33,String00a43),
+	choose(_N_page_ref3,String00a13,_String00a23,_String00a33,_String00a43,String00a53),
+	concat_list(["\"",String00a53,"\"."],String5a1),
 	reference(String00a13)
+	%%" (",String00a23,", p. ",N_page_ref3,")."
 
 )),
 	
@@ -494,10 +526,13 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%downcase_and_split(String01,String01ds),
 	%%get_string(Topic_paragraph_link_prompt,either,one-not-ml,String5a1ds,String01ds,Topic_paragraph_link)
 	
-	string_concat(String5a1_az,".",String5a1),			choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
-	choose(String00a44,String00a54),
-	concat_list([String01," is because of ",String5a1_az," because of ",String00a54," (",String00a24,", p. ",N_page_ref4,")."],Topic_paragraph_link),
-	reference(String00a14)
+	string_concat(String5a1_az,".",String5a1),			%%choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
+	%%choose(N_page_ref4,String00a14,String00a24,_String00a34,String00a44,String00a54),
+	split_string(String01,"(","(",[String01_a|_]),
+	
+	concat_list([String01_a," because ",String5a1_az,"."%% because of ",String00a54," (",String00a24,", p. ",N_page_ref4,")."
+	],Topic_paragraph_link)
+	%%reference(String00a14)
 
 	/**
 	%% conn - choose connected comments
@@ -565,8 +600,8 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	%%member1a([String3,String3a,String3aa],ML_db),
 	%%concat_list(["What is the paraphrased quote to comment on? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
 	%%trace,
-					choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
-	choose(String00a44,String00a54),
+					%%choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
+	choose(N_page_ref4,String00a14,String00a24,_String00a34,_String00a44,String00a54),
 	concat_list([String00a54," (",String00a24,", p. ",N_page_ref4,")."],String5a),
 	reference(String00a14),
 
@@ -587,8 +622,8 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	%%trace,
 	%%get_string(String4ac,either,one-not-ml-ref,"",String3aay,String5a1)
 	
-						choose_sentence_range(String00,N_page_ref5,String00a15,String00a25,_String00a35,String00a45),
-	choose(String00a45,String00a55),
+						%%choose_sentence_range(String00,N_page_ref5,String00a15,String00a25,_String00a35,String00a45),
+	choose(N_page_ref5,String00a15,String00a25,_String00a35,_String00a45,String00a55),
 	concat_list([String00a55," (",String00a25,", p. ",N_page_ref5,")."],String5a1),
 	reference(String00a15)
 
@@ -672,9 +707,13 @@ choose1(List1,ConnectionNumber),
 	%%get_string(ConnectionPrompt,either,one-not-ml,CString5a1a2,LastCStrings_a1,String5aaa)
 
 	string_concat(LastCStrings_az,".",LastCStrings),
-	string_concat(CString5a1a_az,".",CString5a1a),						choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
-	choose(String00a46,String00a56),
-	concat_list([LastCStrings_az," is because of ",CString5a1a_az," because of ",String00a56," (",String00a26,", p. ",N_page_ref6,")."],String5aaa),
+	string_concat(CString5a1a_az,".",CString5a1a),						%%choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
+	
+		split_string(LastCStrings_az,"(","(",[LastCStrings_az_a|_]),
+
+choose(_N_page_ref6,String00a16,_String00a26,_String00a36,_String00a46,_String00a56),
+	concat_list([LastCStrings_az_a," because ",CString5a1a_az,"."%%" because ",String00a56," (",String00a26,", p. ",N_page_ref6,")."
+	],String5aaa),
 	reference(String00a16)
 
 	
