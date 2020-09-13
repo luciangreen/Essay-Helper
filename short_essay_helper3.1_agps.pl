@@ -33,10 +33,10 @@ choose(N2,B,B1,B2,C,Item) :-
 	choose2(N2,B,B1,B2,C,Item)->true;(Item="* All quotes exhausted. (*)"),N2=0,B="()",B1="()",B2=0,C=""),
 	%%notrace,
 	!.
-choose2(N2,B,B1,B2,List0,Item) :-
+choose2(N2,B,B1,B2,List0,List0) :-
 %%trace,
 	string00_z(String00),
-	choose_sentence_range(String00,_N21,B,B1,B2,List0),
+	choose_sentence_range(String00,N1,B,B1,B2,List0),
 	%%chosen_quotes(Chosen_quotes1),
 	%%trace,
 	%%length(List0,L),
@@ -45,10 +45,10 @@ choose2(N2,B,B1,B2,List0,Item) :-
 	%%member(N1,N),
 	%%
 	%%random_
-	member([N1,Item10],List0),
+	%%member([N1,Item10],List0),
 	
 	%%random_
-	member(Item1,Item10),
+	%%**member(Item1,Item10),
 	N2 is N1+B2-1,
 	%%get_item_n(List0,N1,Item10),
 
@@ -67,7 +67,7 @@ choose2(N2,B,B1,B2,List0,Item) :-
 	
 	%%get_item_n(List2,N1,Item1),
 
-	string_concat(E,D,Item1),
+	/**string_concat(E,D,Item1),
 	string_length(E,1),
 	downcase_atom(E,E1),
 	atom_string(E1,E2),
@@ -75,20 +75,22 @@ choose2(N2,B,B1,B2,List0,Item) :-
 	string_length(E2,1),
 	string_concat(Item2,""%%"."
 	,Item),
-	delete(String00,[B,B1,B2|_],String00_a),
-	delete(List0,[N1,Item10],List6),
+	**/
+	delete(String00,[B,B1,B2,N2,List0],String00_a),
+	%%**delete(String00,[B,B1,B2|_],String00_a),
+	%%**delete(List0,[N1,Item10],List6),
 	%%findall([Item3,". "],(member(Item3,List2)),List3),
 	%%maplist(append,[List3],[List4]),
 	%%concat_list(List4,_List5),
 	%%append(List6,[]%%List5
 	%%,List7),
-	(List6=[]->String00_b=String00_a;
-	(%%trace,
-	maplist(append,[[[B,B1,B2],List6]],[String00_c]),
-	append(String00_a,[String00_c],String00_b)%%,notrace
-	)),
+	%%**(List6=[]->String00_b=String00_a;
+	%%**(%%trace,
+	%%**maplist(append,[[[B,B1,B2],List6]],[String00_c]),
+	%%**append(String00_a,[String00_c],String00_b)%%,notrace
+	%%**)),
 	retractall(string00_z(_)),
-	assertz(string00_z(String00_b))
+	assertz(string00_z(String00_a))
 	%%trace,
 	%%writeln1(String00_b),notrace
 
@@ -129,7 +131,7 @@ short_essay_helper(%%Filex,
 	delete_invisibles_etc(F,G),
 %%trace,
 SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
-	findall([Az,Bz,Cz,String02h3],(member(Filex1,G),
+	findall(String02h3,(member(Filex1,G),
 	string_concat("sources/",Filex1,Filex),
 		phrase_from_file_s(string(String00a), Filex),
 		string_codes(String02b,String00a),
@@ -139,7 +141,7 @@ SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 		(concat_list(["Error: ",Filex," not in format [\"Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\",\"Surname, A 2000\",First_Page_Num,\"<first page>\",\"<second page>\",...\"]"],Notification1),writeln(Notification1),abort)),
 		%%String02c=String02d,
 		%%trace,
-		findall([N1,String02cb],(
+		findall([Az,Bz,Cz,N1,String02cb],(
 		
 	length(String02c,L),
 	numbers(L,1,[],N),
@@ -158,7 +160,7 @@ SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 		%%delete(String02cc,[_,[]],String02d),
 		String02cc=String02d,
 		
-		findall([N2,String02d1],(member([N2,String02d1],String02d),
+		findall([Az,Bz,Cz,N2,String02d2],(member([Az,Bz,Cz,N2,String02d1],String02d),
 		member(String02d2,String02d1),
 		downcase_atom(String02d2,String02e),
 		atom_string(String02e,String02f1),
@@ -177,14 +179,17 @@ findall(Key_words12,(member(Key_words12,String02e1)),String02g)
 
 		%%prepare_file_for_ml(String00,String02a)
 		),String00z1),
+		
 		%%,
 
-		findall(String02h2,(member([Ay,By,Cy,String02h1],String00z1),
-		(String02h1=[]->String02h2=[];
-		maplist(append,[[[Ay,By,Cy],String02h1]],[String02h2]))
-		),String00z),
+		%%trace,
+				%%writeln1([string00z1,String00z1]),
+%%findall(String02h2,(member([Ay,By,Cy,N1,String02h1],String00z1),
+	%%	(String02h1=[]->String02h2=[];
+		maplist(append,[String00z1],[String00]),%%)
+		%%),String00z),
 
-delete(String00z,[],String00),
+%%delete(String00z,[],String00),
 
 
 term_to_atom(Key_words,Key_words_a),
@@ -195,7 +200,7 @@ atom_string(Key_words_a,Key_words_b),
 %%maplist(append,[String00z],String00),
 		%%trace,
 assertz(string00_z(String00)),
-		%%writeln1(String00),
+		%%writeln1([string00,String00]),
 		%%notrace,
 	
 %%writeln1(String02),
@@ -414,12 +419,12 @@ explain_structure(String01,Reasons_per_paragraph,_File1) :-
 	"The Helper will help write an exposition (which summarises but doesn't critique the idea), a critique (which agrees with or disagrees with the topic), the introduction and the conclusion (which state whether you agreed or disagreed with the topic, etc.).  Citations will be automatically made.","\n","Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class.","\n"],String1),
 	writeln(String1).
 
-choose_sentence_range(String00,_N2,B,B1,B2,C) :-
+choose_sentence_range(String00,N2,B,B1,B2,C) :-
 	length(String00,L),
 	numbers(L,1,[],N),
 	random_member(N1,N),
 	get_item_n(String00,N1,A),
-	A=[B,B1,B2|C].
+	A=[B,B1,B2,N2,C].
 	%%N2 is N1+B2-1.
 	%%random_member(A,String00),
 	

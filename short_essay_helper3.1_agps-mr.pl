@@ -159,7 +159,7 @@ SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
 		%%delete(String02cc,[_,[]],String02d),
 		String02cc=String02d,
 		
-		findall([N2,String02d1],(member([N2,String02d1],String02d),
+		findall([N2,String02d2],(member([N2,String02d1],String02d),
 		member(String02d2,String02d1),
 		downcase_atom(String02d2,String02e),
 		atom_string(String02e,String02f1),
