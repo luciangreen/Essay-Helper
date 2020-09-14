@@ -1181,7 +1181,8 @@ trialy2(List,R) :-
 %%writeln([list,List]),
 %%notrace,
 	length(List,Length),
-	/**((Length=<9->
+	/**
+	((Length=<9->
 		findr4(R4),
 		number_string(R4,R4A),
 		formr5([R4A],9,Length,R5),
@@ -1202,12 +1203,13 @@ trialy2(List,R) :-
 	true.
 	**/
 
-log(Length,A),log(10,C),B is round(A/C)+1,
+log(Length,A),log(10,C),B is floor(A/C)+1,
 numbers(B,1,[],D),
-findall(R,(member(_E,D),findr4(R)),RL),
-B2 is 10^((round(A/C))-1),
+findall(R,(member(_E,D),findr4(R1),number_string(R1,R)),RL),
+B2 is floor(10^((floor(A/C)+1))-1),
 formr5(RL,B2,Length,R5),
 findr(R5,List,R)
+
 .
 
 findr4(R4) :-
@@ -1220,6 +1222,7 @@ formr5(RList,Upper,Length,R5) :-
 		%%findall(D,(member(C,RList),floor(C,D)),RList2),
 		concat_list2A(RList,R5A),
 		number_string(R5B,R5A),
+		%%R5B=R5A,
 		R51 is floor((R5B/Upper)*Length),
 		(R5B=Upper->R5 is R51-1;R5=R51).
 findr(R4,List,R) :-
