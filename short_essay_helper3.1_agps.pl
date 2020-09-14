@@ -422,7 +422,8 @@ explain_structure(String01,Reasons_per_paragraph,_File1) :-
 choose_sentence_range(String00,N2,B,B1,B2,C) :-
 	length(String00,L),
 	numbers(L,1,[],N),
-	random_member(N1,N),
+	%%random_
+	member(N1,N),
 	get_item_n(String00,N1,A),
 	A=[B,B1,B2,N2,C].
 	%%N2 is N1+B2-1.
