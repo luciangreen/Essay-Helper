@@ -124,7 +124,7 @@ short_essay_helper("Author's Heading",["critical","evaluation"],5).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html>walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1 (Chicago).
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1 (Chicago).
 
 
 # Authors
