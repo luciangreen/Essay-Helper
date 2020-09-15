@@ -79,14 +79,14 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 
 
-# Installing and Running Essay Helper 3.1 - Random Essay Generator with Relevance - AGPS Referencing
+# Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - AGPS Referencing
 
-* Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order (or vaguely mind read in random order) order.  Quotes are not repeated.
+* Essay Helper 3 outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order (or vaguely mind read in random order).  Quotes are not repeated.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * Run swipl
 
-* Load with ['short_essay_helper3.1_agps.pl']. or ['short_essay_helper3.1_agps-mr.pl']. for mind reading mode (*Currently not working.* It detects vague, not exact thoughts.  If necessary, repeat the "arem" mantra all the time while the mind reading computation is running to ensure the best results.  Before running texttobr, think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems).
+* Load with ['short_essay_helper3.1_agps.pl']. or ['short_essay_helper3.1_agps-mr.pl']. for mind reading mode (*Currently not working.* It detects vague, not exact thoughts.  If necessary, repeat the "arem" mantra all the time while the mind reading computation is running to ensure the best results.  Before running texttobr, think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.  Also, mind reading requires the database to be breasoned out.).
 * In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
 * Use BBEdit to replace `"` with `'`, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
@@ -101,6 +101,31 @@ short_essay_helper("Author's Heading",["critical","evaluation"],5).
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
 * See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
+
+
+# Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - Chicago Style
+
+* Essay Helper 3 outputs the essay and the essay in HTML form, with ordered endnotes and references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order.  Quotes are not repeated.
+* Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses Chicago style).
+* Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
+* Run swipl
+
+* Load with ['short_essay_helper3.1_chicago.pl'].
+* In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
+* Use BBEdit to replace `"` with `'`, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
+* Check the new source files in the sources folder are in the format:
+```
+["Andrew Petersen, <i>The Fundamentals of Moral Philosophy</i>, 3rd ed. (London: Oxford, 2020)","Petersen, <i>The Fundamentals</i>",1,"<first page>","<second page>",...]
+```	
+* (Insert the first item, the reference for the source, in the required referencing style in double quotes, inert the part of the in-text reference as the second item, insert the first page number of the paper from the book as the third item and check the pages are separated in double quotes as above.  You should remove headers, etc. from each page so that they are not used in the essay.  For this version, move ends of sentences over pages onto the first page.)
+* In swipl, run with:
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5).
+```
+with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
+
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html>walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1 (Chicago).
+
 
 # Authors
 
