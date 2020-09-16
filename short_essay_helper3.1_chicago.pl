@@ -348,7 +348,7 @@ delete(D1,"  ",D),
 	concat_list([B1,"<",B2,">",N3,"<",B3,">",B4,"<",B5,">",N4,"<",B51,">"|B6],B7)
 	)
 	;(Essay22=[B1,B2,N1,B22|B3]->(assign_num(N1,N3),
-	concat_list([B1,"<",B2,">",N1,"<",B22,">"|B3],B7));([B7|_]=Essay22->true;(writeln(["Extra <> in essay.",Essay22]),abort))
+	concat_list([B1,"<",B2,">",N3,"<",B22,">"|B3],B7));([B7|_]=Essay22->true;(writeln(["Extra <> in essay.",Essay22]),abort))
 	))->(true%%,notrace
 	);(%%notrace,
 	fail))))
