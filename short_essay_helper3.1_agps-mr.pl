@@ -77,7 +77,7 @@ choose2(N2,B,B1,B2,List0,List0) :-
 	string_concat(Item2,""%%"."
 	,Item),
 	**/
-	delete(String00,[B,B1,B2,N2,List0],String00_a),
+	delete(String00,[B,B1,B2,N1,List0],String00_a),
 	%%**delete(String00,[B,B1,B2|_],String00_a),
 	%%**delete(List0,[N1,Item10],List6),
 	%%findall([Item3,". "],(member(Item3,List2)),List3),
