@@ -11,6 +11,7 @@ Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph
 * short_essay_helper3.1_agps.pl - Like Essay Helper 3, but finds sentences containing any keywords given.
 * short_essay_helper3.1_agps-mr.pl - same as short_essay_helper3.1.pl but uses mind reader.  It wasn't working last time.
 * short_essay_helper3.1_chicago.pl - same as short_essay_helper3.1_agps.pl, but in Chicago style (with Ibid).
+* source_tagger.pl - Helps tag and report tags similarly to nVivo.
 
 # Getting Started
 
@@ -125,8 +126,54 @@ short_essay_helper("Author's Heading",["critical","evaluation"],5).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1 (Chicago).
+# Installing and Running Source Tagger
 
+* Source Tagger tags quotes and sources with multiple tags and reports the quotes and sources for a particular tag.
+* Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
+* For a new set of tags, create a new tags.txt file in the directory containing `[]`.
+* Run swipl
+
+* Load with ['short_essay_helper3.1_chicago.pl'].
+['source_tagger.pl'].
+* Run with source_tagger.
+```
+?- source_tagger.
+New tag? (y/n)
+|: y
+What are the tags?
+|: a
+What is the text?
+|: abc
+What is the source?
+|: ref abc
+New tag? (y/n)
+|: n
+true.
+```
+* Enter the tags, text and source for each set of tags.
+
+* Print the report of a tag with print_tags.
+```
+?- print_tags.
+a
+b
+e
+f
+Enter tag to show report of.
+|: a
+c
+d
+
+z
+p
+
+abc
+ref abc
+
+true.
+```
+
+* Enter the tag name to print text and source for each tag with that name.
 
 # Authors
 
