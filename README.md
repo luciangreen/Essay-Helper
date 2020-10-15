@@ -81,7 +81,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 
 
-# Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - AGPS Referencing
+# Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - AGPS Referencing - And Mind Reading
 
 * Essay Helper 3 outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order (or vaguely mind read in random order).  Quotes are not repeated.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
