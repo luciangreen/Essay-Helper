@@ -1,5 +1,7 @@
 # Essay Helper
 
+* Essay Helper may not be necessary because it may need a sub-keyword (i.e. not necessarily the topic or a subject keyword), such as "science".  Also, the best sentences with the keyword may need to be hand-chosen and comments selected from just after the quote, or in one case, two sentences before the quote.
+
 Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 
 * short_essay_helper.pl - the Essay Helper algorithm
