@@ -1214,12 +1214,22 @@ mind_read3(Options2,Options,Tree1,Item2,Item1) :-
 	member([_,Item2,N2],Options2),
 	mind_read2(N2,Tree2,Item1).
 	
+mind_read10("",[]) :- !.
 mind_read10(Item,List) :-
-	trialy2(List,R1),
-	findbest(R1,Item),!.
+writeln1([list,List]),
+%trace,
+catch(
+	(trialy2(List,R1),
+	findbest(R1,Item),
+	writeln1([item,Item])),
+   _,
+	mind_read10(Item,List)
+	)
+	,
+!.
 	%%random_member(Item,List),!.
 	
-mind_read10(Item,List) :-
+mind_read100(Item,List) :-
 	length(List,L),
 	Trials is 3*L,
 	trialy22(List,Trials,[],R1),
