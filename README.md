@@ -14,6 +14,7 @@ Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph
 * short_essay_helper3.1_agps-mr.pl - same as short_essay_helper3.1.pl but uses mind reader.  It wasn't working last time.
 * short_essay_helper3.1_chicago.pl - same as short_essay_helper3.1_agps.pl, but in Chicago style (with Ibid).
 * source_tagger.pl - Helps tag and report tags similarly to nVivo.
+* short_essay_helper3.1_agps-mr-tree.pl - same as short_essay_helper3.1.pl but uses mind reader.  It wasn't working last time.
 
 # Getting Started
 
@@ -23,7 +24,9 @@ Please read the following instructions on how to install the project on your com
 
 * Install <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine.
 
-Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter).
+* Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter).
+
+* Install Mind Reader Repository (https://github.com/luciangreen/mindreader).
 
 # Installation from List Prolog Package Manager (LPPM)
 
@@ -90,7 +93,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * Run swipl
 
-* Load with ['short_essay_helper3.1_agps.pl']. or ['short_essay_helper3.1_agps-mr.pl']. for mind reading mode (*Currently not working.* It detects vague, not exact thoughts.  If necessary, repeat the "arem" mantra all the time while the mind reading computation is running to ensure the best results.  Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.  Also, mind reading requires the database to be breasoned out - see <a href="https://github.com/luciangreen/Text-to-Breasonings">Text-to-Breasonings</a>.).
+* Load with ['short_essay_helper3.1_agps.pl']. or ['short_essay_helper3.1_agps-mr-tree.pl']. for mind reading mode (*It is very slow.* It detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.).
 * In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
 * Use BBEdit to replace `"`,`“`,`”`,`’` and `‘` with `'`, `- ` with nothing, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
