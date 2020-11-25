@@ -1218,13 +1218,13 @@ mind_read10("",[]) :- !.
 mind_read10(Item,List) :-
 writeln1([list,List]),
 %trace,
-catch(
+%%catch(
 	(trialy2(List,R1),
 	findbest(R1,Item),
-	writeln1([item,Item])),
-   _,
-	mind_read10(Item,List)
-	)
+	writeln1([item,Item]))
+   %_,
+	%mind_read10(Item,List)
+	%)
 	,
 !.
 	%%random_member(Item,List),!.
@@ -1326,7 +1326,15 @@ trialy1(R1) :-
 	mean(S02,A2),
 	(A1>A2->R1=true;R1=fail).
 
-trial0(S3) :- N is 10, trial1(N,[],S),trial01(S,S3).
+trial0(S3) :- %trace,
+N is 10, 
+catch(
+	(trial1(N,[],S),trial01(S,S3)),
+   _,
+	(trial0(S3)%,writeln(S3)
+	)
+	).
+	
 trial01(S1,S3) :-
 	sort(S1,S),
 	%%midpoint(S,MP),
