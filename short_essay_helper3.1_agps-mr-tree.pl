@@ -1208,11 +1208,11 @@ mind_read2(N1,Tree1,Item1) :-
 
 mind_read3(_,_,Tree1,Item2,Item1) :-
 	member([_,Item2,[-,Item1]],Tree1),!.
-mind_read3(Options2,Options,Tree1,Item2,Item1) :-
+mind_read3(Options2,_Options,Tree1,Item2,Item1) :-
 %trace,
-	subtract2(Tree1,Options,[],Tree2),
+	%subtract2(Tree1,Options,[],Tree2),
 	member([_,Item2,N2],Options2),
-	mind_read2(N2,Tree2,Item1).
+	mind_read2(N2,Tree1,Item1).
 	
 mind_read10("",[]) :- !.
 mind_read10(Item,List) :-
