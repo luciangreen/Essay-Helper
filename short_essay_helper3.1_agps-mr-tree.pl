@@ -426,11 +426,11 @@ choose_sentence_range(String00,N2,B,B1,B2,C) :-
 	
 	%trace,
 	%writeln1(mind_read(N1,N)),
-	findall(D1,(member(D2,String00),term_to_atom(D2,D3),string_atom(D1,D3)),D4),
+	%findall(D1,(member(D2,String00),term_to_atom(D2,D3),string_atom(D1,D3)),D4),
 	%trace,
 	mind_read(A%N1
 	,%%["[\"ref1\",\"author 2003\",1,1,\"M1\"]"]),%
-	D4),
+	String00),
 	writeln(here2),%% changed from mind_read to random_member
 	%number_string(N1,N11),
 	%term_to_atom(A,N11),
@@ -1188,6 +1188,7 @@ strip_illegal_chars1 :-
 		%% sheet_feeder and strip_illegal_chars1 are too slow.  Use BBEdit to replace \n\n with ",\n\n", insert ["*","*",1," at start, "] at end and replace \\ with nothing
 		
 %mind_read("",[]) :- !.
+mind_read(Item,[Item]) :- !.
 mind_read(Item,List0) :-
 	findall(D1,(member(D2,List0),term_to_atom(D2,D3),string_atom(D1,D3)),List1),
 %trace,
@@ -1196,9 +1197,11 @@ mind_read(Item,List0) :-
 	findall(B,(member(C,List1),string_concat(C," 01",B)),List2),
 	findall(B,(member(C,List2),(number(C)->number_string(C,B)->true;((atom(C)->atom_string(C,B))->true;(string(C),C=B)))),List3),
 	
+	%trace,
 	
 	minimise_strings1(List3,List4,Map),
-	
+
+%writeln1(minimise_strings1(List3,List4,Map)),	
 	% findall(B,(member(C,List13),string_concat(C," 01",B)),List),
 
 		%notrace,
