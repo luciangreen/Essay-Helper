@@ -428,12 +428,12 @@ choose_sentence_range(String00,N2,B,B1,B2,C) :-
 	%writeln1(mind_read(N1,N)),
 	findall(D1,(member(D2,String00),term_to_atom(D2,D3),string_atom(D1,D3)),D4),
 	%trace,
-	mind_read(N11%N1
+	mind_read(A%N1
 	,%%["[\"ref1\",\"author 2003\",1,1,\"M1\"]"]),%
 	D4),
 	writeln(here2),%% changed from mind_read to random_member
 	%number_string(N1,N11),
-	term_to_atom(A,N11),
+	%term_to_atom(A,N11),
 	%get_item_n(String00,N1,A),
 	A=[B,B1,B2,N2,C].
 	%%N2 is N1+B2-1.
@@ -1188,30 +1188,48 @@ strip_illegal_chars1 :-
 		%% sheet_feeder and strip_illegal_chars1 are too slow.  Use BBEdit to replace \n\n with ",\n\n", insert ["*","*",1," at start, "] at end and replace \\ with nothing
 		
 %mind_read("",[]) :- !.
-mind_read(Item,List1) :-
+mind_read(Item,List0) :-
+	findall(D1,(member(D2,List0),term_to_atom(D2,D3),string_atom(D1,D3)),List1),
 %trace,
-	List1=A,
-	findall(B,(member(C,A),(number(C)->number_string(C,B)->true;((atom(C)->atom_string(C,B))->true;(string(C),C=B)))),List2),
 	
-	findall(B,(member(C,List2),string_concat(C," 01",B)),List),
+	%List1=A,
+	findall(B,(member(C,List1),string_concat(C," 01",B)),List2),
+	findall(B,(member(C,List2),(number(C)->number_string(C,B)->true;((atom(C)->atom_string(C,B))->true;(string(C),C=B)))),List3),
 	
-	make_mind_reading_tree4(List,Tree),
+	
+	minimise_strings1(List3,List4,Map),
+	
+	% findall(B,(member(C,List13),string_concat(C," 01",B)),List),
+
+		%notrace,
+		%trace,
+		%writeln1(make_mind_reading_tree4(List,Tree)),
+	make_mind_reading_tree4(List4,Tree),
+		%writeln1(make_mind_reading_tree4-here1(List,Tree)),
+
+%writeln1(mind_read2(1,Tree,Item1)),
 	mind_read2(1,Tree,Item1),
-	string_concat(Item," 01",Item1).
+writeln1(mind_read2(1,Tree,Item1)),
+writeln(""),
+	%trace,
+	%string_concat(Item3," 01",Item1),
+	find_mapped_item(Item1,Item2,Map),
+	term_to_atom(Item,Item2).
+
 mind_read2(N1,Tree1,Item1) :-
 	findall(Option,member([N1,Option,N2],Tree1),Options),
 	findall([N1,Option,N2],member([N1,Option,N2],Tree1),Options2),
 	%subtract(Tree1,Options,Tree2),
 	mind_read10(Item2,Options),
-	mind_read3(Options2,Options,Tree1,Item2,Item1).
+	mind_read3(N1,Options2,Options,Tree1,Item2,Item1).
 
 
-mind_read3(_,_,Tree1,Item2,Item1) :-
-	member([_,Item2,[-,Item1]],Tree1),!.
-mind_read3(Options2,_Options,Tree1,Item2,Item1) :-
+mind_read3(N1,_,_,Tree1,Item2,Item1) :-
+	member([N1,Item2,[-,Item1]],Tree1),!.
+mind_read3(N1,Options2,_Options,Tree1,Item2,Item1) :-
 %trace,
 	%subtract2(Tree1,Options,[],Tree2),
-	member([_,Item2,N2],Options2),
+	member([N1,Item2,N2],Options2),
 	mind_read2(N2,Tree1,Item1).
 	
 mind_read10("",[]) :- !.
