@@ -1239,17 +1239,26 @@ findall(Item2_a,(member(List0_1,List0),get_item_n(List0_1,1,Item2_a)),Item2_a1),
 		%notrace,
 		%trace,
 		%writeln1(make_mind_reading_tree4(List,Tree)),
+	(too_long1(List4)->(mind_read10(Item1,List4));
+	(
 	make_mind_reading_tree4(List4,Tree),
 		%writeln1(make_mind_reading_tree4-here1(List,Tree)),
 
 %writeln1(mind_read2(1,Tree,Item1)),
 	mind_read2(1,Tree,Item1),
 writeln1(mind_read2(1,Tree,Item1)),
-writeln(""),
+writeln(""))),
 	%trace,
 	%string_concat(Item3," 01",Item1),
 	find_mapped_item(Item1,Item2,Map),
-	term_to_atom(Item,Item2),
+	%(string(Item2)->
+	
+	%(%catch
+	%(number_string(Item,Item2)->true;Item=Item2))
+	
+	%;
+	term_to_atom(Item,Item2)%)
+	,
 	
 	(findall(Rest1,(member(Item1_b,List0),%get_item_b(Item1_b,Number,Item1_b1),%Number2 is Number+1,get_item_b(Item1_b,Number2,Item1_b2)
 	Item1_b=[_|Rest1]),Item1_b2),
@@ -1274,22 +1283,33 @@ mind_read_b(Item,List0) :-
 		%notrace,
 		%trace,
 		%writeln1(make_mind_reading_tree4(List,Tree)),
+	(too_long1(List4)->(mind_read10(Item1,List4));
+	(
 	make_mind_reading_tree4(List4,Tree),
 		%writeln1(make_mind_reading_tree4-here1(List,Tree)),
 
 %writeln1(mind_read2(1,Tree,Item1)),
 	mind_read2(1,Tree,Item1),
 writeln1(mind_read2(1,Tree,Item1)),
-writeln(""),
+writeln(""))),
 	%trace,
 	%string_concat(Item3," 01",Item1),
 	find_mapped_item(Item1,Item2,Map),
-	term_to_atom(Item,Item2).
+	%(string(Item2)->
+	
+	%(%catch
+	%(number_string(Item,Item2)->true;Item=Item2))
+	
+	%;
+	term_to_atom(Item,Item2)%)
+	.
 
 mind_read2(N1,Tree1,Item1) :-
 	findall(Option,member([N1,Option,N2],Tree1),Options),
 	findall([N1,Option,N2],member([N1,Option,N2],Tree1),Options2),
 	%subtract(Tree1,Options,Tree2),
+writeln1([options_length,Options]),
+%(Options=["1","2","3","4","5","6","7","8","9"]->trace;true),
 	mind_read10(Item2,Options),
 	mind_read3(N1,Options2,Options,Tree1,Item2,Item1).
 
