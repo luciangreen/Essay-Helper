@@ -34,6 +34,7 @@ Please read the following instructions on how to install the project on your com
 ```
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
 cd List-Prolog-Package-Manager
+swipl
 ```
 loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Essay-Helper").`.
 
