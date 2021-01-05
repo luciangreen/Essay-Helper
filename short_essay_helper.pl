@@ -62,7 +62,7 @@ agree_disagree(Pole),
 	%%trace,
 	get_string(Future_research_prompt,Pole,one-not-ml,"","",Future_research),
 	
-term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream).
+term_to_atom([Exposition,Critique,String3ad,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream).
 
 	
 	
@@ -199,7 +199,7 @@ critique2(String01,ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,
 	get_string(String4,either,two,Item1a,String3aa,String5)
 	**/
 	)
-	->true;critique2(ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,Topic_paragraph_link).
+	->true;critique2(String01,ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,Topic_paragraph_link).
 
 
 
