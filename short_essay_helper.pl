@@ -39,7 +39,7 @@ short_essay_helper(Filex,Reasons_per_paragraph) :-
 	
 writeln1(String02),
 
-	generate_file_name(File1),
+	generate_file_name(String01,File1),
 
 	Numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
 	explain_structure(String01,Reasons_per_paragraph,File1),
@@ -69,9 +69,9 @@ term_to_atom([Exposition,Critique,String3ad,Future_research],File_contents),open
 	/**critique(String00,String01,Reasons_per_paragraph,Numbers,Critique).
 	**/
 	
-generate_file_name(File1) :-
+generate_file_name(String01,File1) :-
 			get_time(TS),stamp_date_time(TS,date(Year,Month,Day,Hour1,Minute1,Seconda,_A,_TZ,_False),local),
-	concat_list(["file",Year,Month,Day,Hour1,Minute1,Seconda,".txt"],File1).
+	concat_list([String01," file",Year,Month,Day,Hour1,Minute1,Seconda,".txt"],File1).
 
 explain_structure(String01,Reasons_per_paragraph,File1) :-
 	concat_list(["The Short Essay Helper will you help structure and write your essay about \"",String01,"\" with ",Reasons_per_paragraph," reasons per paragraph.","\n",
