@@ -21,6 +21,8 @@
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
+:- dynamic refs/1.
+:- dynamic refs_long/1.
 
 choose(List0,Item) :-
 	random_member(Item10,List0),
@@ -54,6 +56,9 @@ short_essay_helper(%%Filex,
 
 	retractall(refs(_)),
 	assertz(refs([])),
+
+	retractall(refs_long(_)),
+	assertz(refs_long([])),
 
 	retractall(key_words(_)),
 	assertz(key_words([])),
@@ -107,12 +112,13 @@ agree_disagree(Pole),
 	concat_list(["In ",String01,", automation should apply to ",String00a5," (",String00a2,", p. ",N_page_ref,")."],Future_research),
 	reference(String00a1),
 	
-term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
+	refs(R2),refs_long(R21)
+
+term_to_atom([Exposition,Critique,String3ad,Future_research,R21],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
 
 %% Output essay
 %%findall(_,(member(Exposition1,Exposition),Exposition1=
 
-refs(R2),
 
 %%writeln1([Exposition,Critique,Future_research,R2]),
 
@@ -740,6 +746,7 @@ maplist(equals_empty_list,Item12)
 	))))).
 	
 reference(String2r) :-
+	refs_long(R10),
 	(refs(R1),%%writeln("What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\n"),writeln("Existing references (copy one or many delimited with \"\\n\"):"), 
 	findall(_,(member(R11,R1),writeln(R11)),_),%%read_string(user_input, "\n", "\r", _End4, String2r),
 	not(String2r=""),%%downcase_atom(String2r,_String3r),
@@ -747,8 +754,10 @@ reference(String2r) :-
 	split_string(String2r,"\n\r","\n\r",String2r3),
 	%%trace,
 	retractall(refs(_)),maplist(append,[[R1,String2r3]],[String2r21]),
+	retractall(refs_long(_)),maplist(append,[[R10,String2r3]],[String2r210]),
 	sort1(String2r21,String2r2),
-	assertz(refs(String2r2))%%split_string(String3r, SepandPad, SepandPad, String4)
+	assertz(refs(String2r2)),
+	assertz(refs_long(String2r210))%%split_string(String3r, SepandPad, SepandPad, String4)
 	).
 	
 

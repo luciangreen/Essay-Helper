@@ -266,12 +266,13 @@ agree_disagree(Pole),
 	%%reference(String00a1,String00a2,N_page_ref,End_note_number),
 	%%add_1_to_end_note_number,
 	
-term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
+	refs(R2),
+
+term_to_atom([Exposition,Critique,String3ad,Future_research,R2],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
 
 %% Output essay
 %%findall(_,(member(Exposition1,Exposition),Exposition1=
 
-refs(R2),
 %%writeln([r2,R2]),
 
 %%writeln1([Exposition,Critique,Future_research,R2]),

@@ -233,12 +233,13 @@ agree_disagree(Pole),
 	concat_list(["In ",String01,", automation should apply to \"",String00a5,"\" (",String00a2,", p. ",N_page_ref,")."],Future_research),
 	reference(String00a1),
 	
-term_to_atom([Exposition,Critique,Future_research],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
+	refs(R2),
+
+term_to_atom([Exposition,Critique,String3ad,Future_research,R2],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
 
 %% Output essay
 %%findall(_,(member(Exposition1,Exposition),Exposition1=
 
-refs(R2),
 
 %%writeln1([Exposition,Critique,Future_research,R2]),
 
