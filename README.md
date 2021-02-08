@@ -9,7 +9,7 @@ Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph
 * file.txt - the essay to write the essay on
 * walk_through.txt - example walkthrough of the algorithm (no output)
 * short_essay_helper2.pl - the Essay Helper without paraphrasing checking, and outputs an HTML essay with ordered bibliography.
-* short_essay_helper3.pl - the Essay Helper generates random essays from a number of sources without paraphrasing checking, and outputs an HTML essay with ordered bibliography.
+* short_essay_helper3_agps.pl - the Essay Helper generates random essays from a number of sources without paraphrasing checking, and outputs an HTML essay with ordered bibliography.
 * short_essay_helper3.1_agps.pl - Like Essay Helper 3, but finds sentences containing any keywords given.
 * short_essay_helper3.1_agps-mr.pl - same as short_essay_helper3.1.pl but uses mind reader.  
 * short_essay_helper3.1_chicago.pl - same as short_essay_helper3.1_agps.pl, but in Chicago style (with Ibid).
