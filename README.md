@@ -78,7 +78,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Use BBEdit to replace `"`,`“`,`”`,`’` and `‘` with `'`, `- ` with nothing, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
 ```
-["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>","first page","second page","first page","second page",...]
+["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
 ```
 * (Insert the first item, the reference for the source, in the required referencing style in double quotes, inert the part of the in-text reference as the second item, insert the first page number of the paper from the book as the third item and check the pages are separated in double quotes as above.  You should remove headers, etc. from each page so that they are not used in the essay.  For this version, move ends of sentences over pages onto the first page.)
 * In swipl, run with:
