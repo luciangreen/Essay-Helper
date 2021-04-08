@@ -1,8 +1,7 @@
 # Essay Helper
 
-* Essay Helper may not be necessary because it may need a sub-keyword (i.e. not necessarily the topic or a subject keyword), such as "science".  Also, the best sentences with the keyword may need to be hand-chosen and comments selected from just after the quote, or in one case, two sentences before the quote.
-
-Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
+* Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
+* You should use a word frequency tool to find viable keywords.  You may need to redraft after reading to find better keywords.
 
 * short_essay_helper.pl - the Essay Helper algorithm
 * distances.pl - the KNN algorithm
@@ -22,32 +21,49 @@ Please read the following instructions on how to install the project on your com
 
 # Prerequisites
 
-* Install <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine.
+* Please download and install SWI-Prolog for your machine at `https://www.swi-prolog.org/build/`.
 
-* Install List Prolog Interpreter Repository (https://github.com/luciangreen/listprologinterpreter).
+# 1. Install manually
 
-* Install Mind Reader Repository (https://github.com/luciangreen/mindreader).
+Download <a href="http://github.com/luciangreen/Essay-Helper/">this repository</a>, <a href="http://github.com/luciangreen/listprologinterpreter/">List Prolog Interpreter Repository</a>, and <a href="https://github.com/luciangreen/mindreader">Mind Reader Repository</a>.
 
-# Installation from List Prolog Package Manager (LPPM)
+# 2. Or Install from List Prolog Package Manager (LPPM)
 
-* Optionally, you can install from LPPM by installing <a href="https://www.swi-prolog.org/build/">SWI-Prolog</a> for your machine, downloading the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>,
+* Download the <a href="https://github.com/luciangreen/List-Prolog-Package-Manager">LPPM Repository</a>:
+
 ```
 git clone https://github.com/luciangreen/List-Prolog-Package-Manager.git
 cd List-Prolog-Package-Manager
 swipl
+['lppm'].
+lppm_install("luciangreen","Essay-Helper")
+halt
 ```
-loading LPPM with `['lppm'].` then installing the package by running `lppm_install("luciangreen","Essay-Helper").`.
 
-# Installing and Running Essay Helper
+# Running Essay Helper
 
-* Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
-* Run swipl
-* Load with ['short_essay_helper.pl'].
+* In Shell:
+`cd Essay-Helper`
+`swipl`
+
+* Load with `['short_essay_helper.pl'].`
 * In swipl, run with: 
 ```
 short_essay_helper("file.txt",5).
 ```
 about essay "file.txt" for 5 reasons per paragraph.
+
+* To change the number of paragraphs in the exposition of the essay, edit `5` in
+```
+length(List1,5), %% 5->1 paragraphs per exposition
+```
+in the correct Essay Helper algorithm file.
+
+* To change the number of paragraphs in the critique of the essay, edit `5` in
+```
+length(List1,5), %% 5->1 paragraphs per critique
+```
+in the correct Essay Helper algorithm file.
 
 * See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through.txt">walk-through</a> as an example of Essay Helper.
 
@@ -55,8 +71,8 @@ about essay "file.txt" for 5 reasons per paragraph.
 
 * Essay Helper 2 outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first.
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
-* Run swipl
-* Load with ['short_essay_helper2.pl'].
+* Run `swipl`
+* Load with `['short_essay_helper2.pl'].`
 
 * In swipl, run with: 
 ```
@@ -71,9 +87,9 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
-* Run swipl
+* Run `swipl`
 
-* Load with ['short_essay_helper3_agps.pl'].
+* Load with `['short_essay_helper3_agps.pl'].`
 * In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
 * Use BBEdit to replace `"`,`“`,`”`,`’` and `‘` with `'`, `- ` with nothing, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
@@ -97,9 +113,9 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Essay Helper 3 outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order (or vaguely mind read in random order).  Quotes are not repeated.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
-* Run swipl
+* Run `swipl`
 
-* Load with ['short_essay_helper3.1_agps.pl']. or ['short_essay_helper3.1_agps-mr.pl'] (['short_essay_helper3.1_agps-mr-tree.pl'] - mind reads character by character). for mind reading mode (*short_essay_helper3.1_agps-mr-tree.pl is very slow.* It detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.).
+* Load with `['short_essay_helper3.1_agps.pl'].` or ['short_essay_helper3.1_agps-mr.pl'] (['short_essay_helper3.1_agps-mr-tree.pl'] - mind reads character by character). for mind reading mode (*short_essay_helper3.1_agps-mr-tree.pl is very slow.* It detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.).
 * In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
 * Use BBEdit to replace `"`,`“`,`”`,`’` and `‘` with `'`, `- ` with nothing, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
@@ -121,9 +137,9 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Essay Helper 3 outputs the essay and the essay in HTML form, with ordered endnotes and references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order.  Quotes are not repeated.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses Chicago style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
-* Run swipl
+* Run `swipl`
 
-* Load with ['short_essay_helper3.1_chicago.pl'].
+* Load with `['short_essay_helper3.1_chicago.pl'].`
 * In the sources folder, place text file for the essay sources with the names "*.txt", etc., and "\n\n" between pages.
 * Use BBEdit to replace `"`,`“`,`”`,`’` and `‘` with `'`, `- ` with nothing, `\n\n` with `",\n\n"`, insert `["*","*",1,"` (see next point) at start, `"]` at end and replace `\\` with nothing in all `/sources/*` files, copied from `/raw_sources/*`.
 * Check the new source files in the sources folder are in the format:
@@ -142,11 +158,11 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Source Tagger tags quotes and sources with multiple tags and reports the quotes and sources for a particular tag.
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * For a new set of tags, create a new tags.txt file in the directory containing `[]`.
-* Run swipl
+* Run `swipl`
 
-* Load with ['short_essay_helper3.1_chicago.pl'].
-['source_tagger.pl'].
-* Run with source_tagger.
+* Load with `['short_essay_helper3.1_chicago.pl'].`
+`['source_tagger.pl'].`
+* Run with `source_tagger.`
 ```
 ?- source_tagger.
 New tag? (y/n)
