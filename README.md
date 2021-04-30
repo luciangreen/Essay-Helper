@@ -81,7 +81,7 @@ short_essay_helper("Author's Heading",5).
 ```
 with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a>, <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.html">walk_through2.html</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2-output.txt">walk_through2-output.txt</a> as examples of Essay Helper 2.
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a>, <a href="https://rawgit.com/luciangreen/Essay-Helper/master/walk_through2.html">walk_through2.html</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2-output.txt">walk_through2-output.txt</a> as examples of Essay Helper 2.
 
 # Installing and Running Essay Helper 3 - Random Essay Generator - AGPS Referencing
 
@@ -104,7 +104,7 @@ short_essay_helper("Author's Heading",5).
 ```
 with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.html">walk_through3.html</a> as an example of Essay Helper 3.
+* See <a href="https://rawgit.com/luciangreen/Essay-Helper/master/walk_through3.html">walk_through3.html</a> as an example of Essay Helper 3.
 
 
 
@@ -130,7 +130,7 @@ short_essay_helper("Author's Heading",["critical","evaluation"],5).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
+* See <a href="https://rawgit.com/luciangreen/Essay-Helper/master/walk_through3.1.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
 
 
 # Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - Chicago Style
@@ -154,7 +154,7 @@ short_essay_helper("Author's Heading",["critical","evaluation"],5).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1-Chicago.
+* See <a href="https://rawgit.com/luciangreen/Essay-Helper/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1-Chicago.
 
 
 # Installing and Running Source Tagger
