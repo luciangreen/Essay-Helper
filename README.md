@@ -81,7 +81,8 @@ short_essay_helper("Author's Heading",5).
 ```
 with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
-* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a>, <a href="https://rawgit.com/luciangreen/Essay-Helper/master/walk_through2.html">walk_through2.html</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2-output.txt">walk_through2-output.txt</a> as examples of Essay Helper 2.
+
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a>, <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.html">walk_through2.html</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2-output.txt">walk_through2-output.txt</a> as examples of Essay Helper 2.
 
 # Installing and Running Essay Helper 3 - Random Essay Generator - AGPS Referencing
 
