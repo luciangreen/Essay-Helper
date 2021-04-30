@@ -154,6 +154,9 @@ short_essay_helper("Author's Heading",["critical","evaluation"],5).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
+* See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.htmll</a> as an example of Essay Helper 3.1-Chicago.
+
+
 # Installing and Running Source Tagger
 
 * Source Tagger tags quotes and sources with multiple tags and reports the quotes and sources for a particular tag.
