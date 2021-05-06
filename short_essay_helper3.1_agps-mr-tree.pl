@@ -22,6 +22,7 @@
 :- include('../listprologinterpreter/la_strings').
 :- include('../mindreader/make_mind_reading_tree4 working1.pl').
 :- include('texttobr2qb.pl').
+:- include('sheet_feeder.pl').
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
@@ -1100,93 +1101,6 @@ numbers(N2,N1,Numbers1,Numbers2) :-
 	append(Numbers1,[N1],Numbers3),
 	numbers(N2,N3,Numbers3,Numbers2).
 
-%% sheet_feeder(T),writeln(T).
-%% T = ["a\na", "B\nb\nb", "C\nc\nc"].
-
-sheet_feeder(T) :-
-	directory_files("raw_sources/",F),
-	delete_invisibles_etc(F,G),
-	findall(K1,(member(H,G),		
-	string_concat("raw_sources/",H,String00b),
-	phrase_from_file_s(string(String001), String00b),
-	string_codes(String000,String001),
-	string_concat(String000,"\n\n",String00_a),
-	%%trace,
-	strip_illegal_chars(String00_a,"",String00),
-		split_on_substring(String00,"\n\n","",J1),
-		%%maplist(append,[J2],[J1]),
-		%%findall(J4,(member(J3,J2),%%trace,
-		%%concat_list(J3,J4)),K1),
-		delete(J1,"",K1),
-		term_to_atom(K1,K),
-		string_concat("sources/",H,String00bb),
-	(open_s(String00bb,write,Stream1),
-	write(Stream1,K),
-	close(Stream1))
-
-		),T).
-		%%split_on_double_newline(J,[],K)),T).
-
-split_on_substring("",_A,E,[E]) :- !.
-split_on_substring(A,B,E,C) :-
-	string_concat(B,D,A),
-	split_on_substring(D,B,"",C1),
-	append([E],C1,C),!.
-split_on_substring(A,B,E1,C) :-
-	string_concat(E,D,A),
-	string_length(E,1),
-	string_concat(E1,E,E2),
-	split_on_substring(D,B,E2,C),!.
-	
-strip_illegal_chars("",A,A) :- !.
-strip_illegal_chars(A,B,E) :-
-	string_concat(E1,D,A),
-	string_length(E1,1),
-	char_type(E1,quote),
-	string_concat(B,"'",F),
-	strip_illegal_chars(D,F,E).
-strip_illegal_chars(A,B,E) :-
-	string_concat(C,D,A),
-	string_length(C,1),
-	(char_type(C,alnum)->true;
-	(char_type(C,white)->true;
-	(char_type(C,digit)->true;
-	(char_type(C,punct)->true;
-	(char_type(C,newline)))))),
-	string_concat(B,C,F),
-	strip_illegal_chars(D,F,E),!.
-strip_illegal_chars(A,B,E) :-
-	string_concat(E1,D,A),
-	string_length(E1,1),
-	string_concat(B," ",F),
-	strip_illegal_chars(D,F,E),!.
-
-
-strip_illegal_chars1 :-
-	directory_files("raw_sources/",F),
-	delete_invisibles_etc(F,G),
-	findall(String00,(member(H,G),		
-	string_concat("raw_sources/",H,String00b),
-	phrase_from_file_s(string(String001), String00b),
-	string_codes(String000,String001),
-	string_concat(String000,"\n\n",String00_a),
-	%%trace,
-	strip_illegal_chars(String00_a,"",String00),
-		%%split_on_substring(String00,"\n\n","",J1),
-		%%maplist(append,[J2],[J1]),
-		%%findall(J4,(member(J3,J2),%%trace,
-		%%concat_list(J3,J4)),K1),
-		%%delete(J1,"",K1),
-		term_to_atom(String00,K),
-		string_concat("sources/",H,String00bb),
-	(open_s(String00bb,write,Stream1),
-	write(Stream1,K),
-	close(Stream1))
-
-		),_T).
-		
-		%% sheet_feeder and strip_illegal_chars1 are too slow.  Use BBEdit to replace \n\n with ",\n\n", insert ["*","*",1," at start, "] at end and replace \\ with nothing
-		
 %mind_read("",[]) :- !.
 mind_read(Item,[Item]) :- !.
 mind_read(Item,List0) :-
