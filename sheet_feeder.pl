@@ -113,4 +113,3 @@ strip_illegal_chars1 :-
 
 		),_T).
 		
-		%% sheet_feeder and strip_illegal_chars1 are too slow.  Use BBEdit to replace \n\n with ",\n\n", insert ["*","*",1," at start, "] at end and replace \\ with nothing
