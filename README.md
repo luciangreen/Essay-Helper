@@ -92,7 +92,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Run `swipl`
 
 * Load with `['short_essay_helper3_agps.pl'].`
-* In the `rcaw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
+* In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
 ```
@@ -119,7 +119,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Run `swipl`
 
 * Load with `['short_essay_helper3.1_agps.pl'].` or ['short_essay_helper3.1_agps-mr.pl'] (['short_essay_helper3.1_agps-mr-tree.pl'] - mind reads character by character). for mind reading mode (It detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.).
-* In the `rcaw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
+* In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
 ```
@@ -143,7 +143,7 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Run `swipl`
 
 * Load with `['short_essay_helper3.1_chicago.pl'].`
-* In the `rcaw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
+* In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
 ```
