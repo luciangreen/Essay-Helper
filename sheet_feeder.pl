@@ -11,10 +11,12 @@ sheet_feeder(T) :-
 	append(String001,`\n\n`,String00_a),
 	%trace,
 	strip_illegal_chars(String00_a,[],String00),
-		split_on_substring(String00,`\n\n`,[],J1),
+		split_on_substring(String00,`\n\n`,[],J11),
 		%%maplist(append,[J2],[J1]),
 		%%findall(J4,(member(J3,J2),%%trace,
 		%%concat_list(J3,J4)),K1),
+ reverse(J11,S1),(append([10],A,S1)->B=A;B=S1),reverse(B,J1),
+
 		delete(J1,"",K2),
 		K1=["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1|K2],
 		term_to_atom(K1,K),
