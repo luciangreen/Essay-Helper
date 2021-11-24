@@ -34,7 +34,7 @@ process(List0,List1,List2) :-
 
 	replace(Pairs),
 	(not((append(_B11,C11,List0),append(A,_C31,C11),
-	(member([A,_],Pairs)->true;A=`\n`)))->
+	(member([A,_],Pairs)->true;A=`\n\n`)))->
 	(string_codes(Middle1,List0),
 	append(List1,[Middle1],List2));
 	
