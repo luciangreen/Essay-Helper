@@ -115,7 +115,7 @@ or
 ```
 short_essay_helper("Author's Heading",5,mind_reader_tree).
 ```
-with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
+with heading of the essay, "Author's Heading", 5 reasons per paragraph and choosing in order, random, mind reading or a detailed mind reading tree method.
 
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.html">walk_through3.html</a> as an example of Essay Helper 3.
@@ -155,7 +155,7 @@ or
 ```
 short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader_tree).
 ```
-with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
+with heading of the essay, "Author's Heading", keywords "critical" and "evaluation", 5 reasons per paragraph and choosing in order, random, mind reading or a detailed mind reading tree method.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
 
@@ -191,7 +191,7 @@ or
 ```
 short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader_tree).
 ```
-with heading of the essay, "Author's Heading", keywords "critical" and "evaluation", 5 reasons per paragraph and a choosing in order, random, mind reading or a detailed mind reading tree method.
+with heading of the essay, "Author's Heading", keywords "critical" and "evaluation", 5 reasons per paragraph and choosing in order, random, mind reading or a detailed mind reading tree method.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1-Chicago.
 
