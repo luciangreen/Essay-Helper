@@ -1,4 +1,4 @@
-Essay Helper | <a href="https://github.com/luciangreen/Text-to-Object-Name">Text-to-Object-Name (Helps Earn High Distinctions)</a> | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
+Essay Helper | <a href="https://github.com/luciangreen/Text-to-Breasonings">Text-to-Breasonings (Helps Earn High Distinctions)</a> | <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar Logic (Helps Mind Map Details)</a>
 
 # Essay Helper
 
@@ -87,7 +87,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 * See <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.txt">walk-through2</a>, <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2.html">walk_through2.html</a> and <a href="https://github.com/luciangreen/Essay-Helper/blob/master/walk_through2-output.txt">walk_through2-output.txt</a> as examples of Essay Helper 2.
 
-# Installing and Running Essay Helper 3 - Random Essay Generator - AGPS Referencing
+# Installing and Running Essay Helper 3 - Random Essay Generator - AGPS Referencing - With Mind Reading
 
 * Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument selected from four methods.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
