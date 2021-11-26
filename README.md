@@ -5,6 +5,8 @@ Essay Helper | <a href="https://github.com/luciangreen/Text-to-Object-Name">Text
 * Note: `short_essay_helper.pl` uses KNN to help write essays.  It asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  It has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 * You should use a <a href="https://github.com/luciangreen/Philosophy">word frequency tool</a> to find viable keywords in `short_essay_helper3.1_*.pl`.  You may need to redraft after reading to find better keywords.
 * High Distinctions may be more likely to be awarded in `short_essay_helper3.1_*.pl` if multiple sources with one keyword are used per paragraph.
+* In `short_essay_helper3*.pl`, one of four reason chosing method be chosen: Member, random member, mind reader or midnreader tree.
+* In `short_essay_helper3*.pl`, the contents of each PDF should be copied and pasted into `*.txt` files in the `raw_sources` folder, and the instructions about referencing, setting the starting mage number, etc. followed.  This algorithm may help with reading sources for an essay and relies on the user to paraphrase sentences afterwards.  I have written a <a href="https://github.com/luciangreen/Philosophy">paraphrasing algorithm</a>. Still, it just replaces words, but the user should understand the sentences and change the ideas around in the sentence according to the argument by hand-paraphrasing them.
 * Think of the "number one way of thinking" before running any mind reading algorithm for more understandable results.
 
 * short_essay_helper.pl - the Essay Helper algorithm
@@ -93,6 +95,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Run `swipl`
 
 * Load with `['short_essay_helper3_agps.pl'].`
+* Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
@@ -132,7 +135,7 @@ with heading of the essay, "Author's Heading", 5 reasons per paragraph and choos
 * Run `swipl`
 
 * Load with `['short_essay_helper3.1_agps.pl'].`
-Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
+* Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
@@ -169,6 +172,7 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Run `swipl`
 
 * Load with `['short_essay_helper3.1_chicago.pl'].`
+* Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
