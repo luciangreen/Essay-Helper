@@ -4,7 +4,7 @@ Essay Helper | <a href="https://github.com/luciangreen/Text-to-Object-Name">Text
 
 * Note: `short_essay_helper.pl` uses KNN to help write essays.  It asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  It has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 * You should use a <a href="https://github.com/luciangreen/Philosophy">word frequency tool</a> to find viable keywords in `short_essay_helper3.1_*.pl`.  You may need to redraft after reading to find better keywords.
-* High Distinctions may be more likely to be awarded in `short_essay_helper3*.pl` if multiple sources are used per paragraph.
+* High Distinctions may be more likely to be awarded in `short_essay_helper3*.pl` if multiple sources with one keyword are used per paragraph.
 * Think of the "number one way of thinking" before running any mind reading algorithm for more understandable results.
 
 * short_essay_helper.pl - the Essay Helper algorithm
