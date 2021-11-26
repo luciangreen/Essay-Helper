@@ -88,7 +88,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
 # Installing and Running Essay Helper 3 - Random Essay Generator - AGPS Referencing
 
-* Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument traversed depth first.
+* Essay Helper 3 randomly outputs the essay and the essay in HTML form, with ordered references and argument selected from four methods.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses AGPS style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * Run `swipl`
@@ -103,7 +103,19 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Insert the first item, the reference for the source, in the required referencing style in double quotes, insert the part of the in-text reference as the second item, insert the first page number of the paper from the source as the third item and check the pages are separated in double quotes as above.  You should remove headers, etc. from each page so that they are not used in the essay.  For this version, move ends of sentences over pages onto the first page.
 * In swipl, run with:
 ```
-short_essay_helper("Author's Heading",5).
+short_essay_helper("Author's Heading",5,member).
+```
+,
+```
+short_essay_helper("Author's Heading",5,random_member).
+```
+,
+```
+short_essay_helper("Author's Heading",5,mind_reader).
+```
+or
+```
+short_essay_helper("Author's Heading",5,mind_reader_tree).
 ```
 with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 
@@ -120,7 +132,8 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * Run `swipl`
 
-* Load with `['short_essay_helper3.1_agps.pl'].` or `['short_essay_helper3.1_agps-mr.pl'].` (`['short_essay_helper3.1_agps-mr-tree.pl'].` - mind reads character by character). for mind reading mode (It detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.).
+* Load with `['short_essay_helper3.1_agps.pl'].`
+Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
 * Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
 * Check the new source files in the `sources` folder are in the format:
@@ -130,16 +143,28 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Insert the first item, the reference for the source, in the required referencing style in double quotes, insert the part of the in-text reference as the second item, insert the first page number of the paper from the source as the third item and check the pages are separated in double quotes as above.  You should remove headers, etc. from each page so that they are not used in the essay.  For this version, move ends of sentences over pages onto the first page.
 * In swipl, run with:
 ```
-short_essay_helper("Author's Heading",["critical","evaluation"],5).
+short_essay_helper("Author's Heading",["critical","evaluation"],5,member).
+```
+,
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5,random_member).
+```
+,
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader).
+```
+or
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader_tree).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
 
 
-# Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - Chicago Style
+# Installing and Running Essay Helper 3.1 - Essay Generator with Relevance - Chicago Style - And Mind Reading
 
-* Essay Helper 3 outputs the essay and the essay in HTML form, with ordered endnotes and references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in order.  Quotes are not repeated.
+* Essay Helper 3 outputs the essay and the essay in HTML form, with ordered endnotes and references and argument traversed depth first, with key words, any of which to search for in each sentence.  Chooses sources, pages and quotes in random order, mind reads or detailedly mind reads.  Quotes are not repeated.
 * Note: Generated essays are not to be handed in, and you need to paraphrase and cite work you have referenced.  Your grade depends on whether you agree or disagree and how many breasonings you breason out.  Check the referencing style is appropriate for your class (this algorithm uses Chicago style).
 * Install by downloading the prerequisites above and saving in folders next to each other or by using LPPM above.
 * Run `swipl`
@@ -154,9 +179,21 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Insert the first item, the reference for the source, in the required referencing style in double quotes, insert the part of the in-text reference as the second item, insert the first page number of the paper from the source as the third item and check the pages are separated in double quotes as above.  You should remove headers, etc. from each page so that they are not used in the essay.  For this version, move ends of sentences over pages onto the first page.
 * In swipl, run with:
 ```
-short_essay_helper("Author's Heading",["critical","evaluation"],5).
+short_essay_helper("Author's Heading",["critical","evaluation"],5,member).
 ```
-with heading of the essay, "Author's Heading", keywords "critical" and "evaluation" and 5 reasons per paragraph.
+,
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5,random_member).
+```
+,
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader).
+```
+or
+```
+short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader_tree).
+```
+with heading of the essay, "Author's Heading", keywords "critical" and "evaluation", 5 reasons per paragraph and a choosing in order, random, mind reading or a detailed mind reading tree method.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1-Chicago.
 

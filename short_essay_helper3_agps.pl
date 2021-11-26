@@ -19,11 +19,14 @@
 :- use_module(library(date)).
 :- include('../listprologinterpreter/la_strings').
 :- include('sheet_feeder.pl').
+:- include('../mindreader/make_mind_reading_tree4 working1.pl').
+:- include('../mindreader/mr_tree.pl').
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
 :- dynamic refs/1.
 :- dynamic refs_long/1.
+:- dynamic choosing_method/1.
 
 choose(List0,Item) :-
 	random_member(Item10,List0),
@@ -39,7 +42,16 @@ choose(List0,Item) :-
 	,Item).
 	
 choose1(List0,Item) :-
-	random_member(Item,List0).
+	choosing_method(Choosing_method),
+	
+	(Choosing_method=member->
+	member(Item,List0);
+	(Choosing_method=random_member->
+	random_member(Item,List0);
+	(Choosing_method=mind_reader->
+	mind_read10(Item,List0);
+	(Choosing_method=mind_reader_tree->
+	mind_read(Item,List0))))).
 
 delete_invisibles_etc(F,G) :-
 	findall(J,(member(H,F),atom_string(H,J),not(J="."),not(J=".."),not(string_concat(".",_,J))),G).
@@ -51,7 +63,11 @@ list([L|Ls]) --> [L], list(Ls).
 
 short_essay_helper(%%Filex,
 	String01,
-	Reasons_per_paragraph) :-
+	Reasons_per_paragraph,Choosing_method) :-
+	
+	retractall(choosing_method(_)),
+	assertz(choosing_method(Choosing_method)),
+
 	retractall(critique3(_)),
 	assertz(critique3([])),
 
@@ -130,7 +146,7 @@ writeln1(Essay),
 %%	string_codes(BrDict3),
 	write(Stream1,HTML),
 	close(Stream1))
-	.
+	,!.
 
 %% replace("a\nb","\n","<br>\n",F).
 %% F="a<br>\nb<br>\n".
