@@ -26,6 +26,8 @@
 :- include('../mindreader/make_mind_reading_tree4 working1.pl').
 :- include('../mindreader/mr_tree.pl').
 
+:- include('short_essay_helper3.1_chicago_keywords_per_paragraph.pl').
+
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
 :- dynamic refs/1.

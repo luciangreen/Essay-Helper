@@ -200,6 +200,9 @@ or
 short_essay_helper("Author's Heading",["critical","evaluation"],5,mind_reader_tree).
 ```
 with heading of the essay, "Author's Heading", keywords "critical" and "evaluation", 5 reasons per paragraph and choosing in order, random, mind reading or a detailed mind reading tree method.
+* Alternatively, you may specify keywords for each of the paragraphs as follows:
+`short_essay_helper_keywords_per_paragraph("Author's Heading",[["b"],["c"]],1,mind_reader_tree).`
+where `mind_reader_tree` may be replaced with the options above, etc.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1-Chicago.
 
