@@ -28,6 +28,8 @@
 :- dynamic refs/1.
 :- dynamic refs_long/1.
 :- dynamic choosing_method/1.
+:- dynamic num_paras_exp/1.
+:- dynamic num_paras_crit/1.
 
 choose(List0,Item) :-
 	random_member(Item10,List0),
@@ -68,6 +70,12 @@ short_essay_helper(%%Filex,
 	
 	retractall(choosing_method(_)),
 	assertz(choosing_method(Choosing_method)),
+
+	retractall(num_paras_exp(_)),
+	assertz(num_paras_exp(5)),
+
+	retractall(num_paras_crit(_)),
+	assertz(num_paras_crit(5)),
 
 	retractall(critique3(_)),
 	assertz(critique3([])),
@@ -325,7 +333,9 @@ choose_sentence_range(String00,N2,B,B1,B2,C) :-
 	%%random_member(A,String00),
 	
 exposition(String00,_String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :-
-	length(List1,5), %% 5->1 paragraphs per exposition
+	num_paras_exp(Num_paras_exp),
+
+	length(List1,Num_paras_exp), %% 5->1 paragraphs per exposition
 	append(List1,_,Numbers),
 	length(List2,Reasons_per_paragraph),
 	append(List2,_,Numbers),
@@ -377,7 +387,9 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 %% Agree or disagree
 
 critique(String00,String01,Reasons_per_paragraph,Numbers,ML_db,Critique1) :-
-	length(List1,5), %% 5->1 paragraphs per critique
+	num_paras_crit(Num_paras_crit),
+
+	length(List1,Num_paras_crit), %% 5->1 paragraphs per critique
 	append(List1,_,Numbers),
 	length(List2,Reasons_per_paragraph),
 	append(List2,_,Numbers),

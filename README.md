@@ -59,13 +59,13 @@ about essay "file.txt" for 5 reasons per paragraph.
 
 * To change the number of paragraphs in the exposition of the essay, edit `5` in
 ```
-length(List1,5), %% 5->1 paragraphs per exposition
+	assertz(num_paras_exp(5)),
 ```
 in the correct Essay Helper algorithm file.
 
 * To change the number of paragraphs in the critique of the essay, edit `5` in
 ```
-length(List1,5), %% 5->1 paragraphs per critique
+	assertz(num_paras_crit(5)),
 ```
 in the correct Essay Helper algorithm file.
 
