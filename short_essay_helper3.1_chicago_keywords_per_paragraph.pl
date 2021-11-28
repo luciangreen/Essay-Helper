@@ -79,19 +79,23 @@ findall(Key_words12,(member(Key_words12,String02e1)),String02g)
 		),String00z1)),
 		String0001),
 		
-findall([Exposition,Critique],(member(String00z1,String0001),
-	
-	retractall(string00_z(_)),
-	%%assertz(string00_z([])),
+		%e e c c 
+		%trace,
+		length(String0001,String0001_length),
+		numbers(String0001_length,1,[],String0001_length_numbers),
+		
+	retractall(string00_z_store(_)),
 
-	retractall(critique3(_)),
-	assertz(critique3([])),
+findall(Exposition,(member(String0001_length_number,String0001_length_numbers),
+get_item_n1(String0001,String0001_length_number,String00z1),
+	
 
 		maplist(append,[String00z1],[String00]),%%)
 		%%),String00z),
 
 %%delete(String00z,[],String00),
 
+get_item_n1(Key_words1a,String0001_length_number,Key_words),
 
 term_to_atom(Key_words,Key_words_a),
 atom_string(Key_words_a,Key_words_b),		
@@ -100,6 +104,8 @@ atom_string(Key_words_a,Key_words_b),
 				%%maplist(append,[[String00z1]],String00),
 %%maplist(append,[String00z],String00),
 		%%trace,
+	retractall(string00_z(_)),
+	%%assertz(string00_z([])),
 assertz(string00_z(String00)),
 		%%writeln1([string00,String00]),
 		%%notrace,
@@ -111,8 +117,37 @@ assertz(string00_z(String00)),
 	Numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
 	explain_structure(String01,Reasons_per_paragraph,File1),
 	exposition(String00,String01,Reasons_per_paragraph,Numbers,String02,Exposition),
+	
+	string00_z(String00_z3),
+	
+	%%assertz(string00_z([])),
+assertz(string00_z_store([String0001_length_number,String00_z3]))
+	
+),Exposition1),
+
 
 	%%concat_list(["Do you agree or disagree with ",String01," (a/d) ? "],String2ad),%%get_string(String2ad,either,one-not-ml,"","",String3ad),
+
+
+findall(Critique,(member(String0001_length_number,String0001_length_numbers),
+%get_item_n(String0001,String0001_length_number,String00z1),
+string00_z_store([String0001_length_number,String00z1]),
+
+	retractall(critique3(_)),
+	assertz(critique3([])),
+
+	Numbers=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+%trace,
+critique(String00,String01,Reasons_per_paragraph,Numbers,String02,Critique)
+
+),Critique1),
+
+	generate_file_name(File1,File2),
+
+%findall(Exposition,(member([Exposition,_],Exposition_critique)),Exposition1),
+%findall(Critique,(member([_,Critique],Exposition_critique)),Critique1),
+%findall(Exposition2,(member([Exposition2|_],Exposition1)),Exposition2a),
+
 	choose1(["a"%%,"d"
 	],String3ad),
 	
@@ -121,18 +156,6 @@ assertz(string00_z(String00)),
 	assertz(agree_disagree(agree)));
 	(retractall(agree_disagree(_)),
 	assertz(agree_disagree(disagree)))),
-
-
-critique(String00,String01,Reasons_per_paragraph,Numbers,String02,Critique)
-
-),Exposition_critique),
-
-	generate_file_name(File1,File2),
-
-findall(Exposition,(member([Exposition,_],Exposition_critique)),Exposition1),
-findall(Critique,(member([_,Critique],Exposition_critique)),Critique1),
-%findall(Exposition2,(member([Exposition2|_],Exposition1)),Exposition2a),
-
 
 agree_disagree(Pole),
 
@@ -167,6 +190,10 @@ writeln1(Essay),
 	write(Stream1,HTML),
 	close(Stream1)),!
 	.
+
+get_item_n1(Exposition,Number1,Item) :-
+	get_item_n(Exposition,Number1,Item),!.
+
 
 write_essay1(String01,Pole,Exposition1,Critique1,Future_research,R2,"",HTML) :-
 	write_heading(String01,_Heading),
