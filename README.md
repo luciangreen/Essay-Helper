@@ -163,6 +163,15 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Alternatively, you may specify keywords for each of the paragraphs as follows:
 `short_essay_helper_keywords_per_paragraph("Author's Heading",[["b"],["c"]],1,mind_reader_tree).`
 where `mind_reader_tree` may be replaced with the options above, etc.
+* As well as this, you may find keywords and run essay helper, specifying keywords for each of the paragraphs as follows:  Follow instructions for sheet_feeder above.
+
+```
+['auto_essay_helper_agps.pl'].
+sheet_feeder(_).
+auto_essay_helper("Title",1,member).
+```
+where `member` may be replaced with the options above, etc.
+You will be asked to select from keywords found in the sources folder.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1.html">walk_through3.1.html</a> as an example of Essay Helper 3.1.
 
@@ -203,6 +212,15 @@ with heading of the essay, "Author's Heading", keywords "critical" and "evaluati
 * Alternatively, you may specify keywords for each of the paragraphs as follows:
 `short_essay_helper_keywords_per_paragraph("Author's Heading",[["b"],["c"]],1,mind_reader_tree).`
 where `mind_reader_tree` may be replaced with the options above, etc.
+* As well as this, you may find keywords and run essay helper, specifying keywords for each of the paragraphs as follows:  Follow instructions for sheet_feeder above.
+
+```
+['auto_essay_helper_chicago.pl'].
+sheet_feeder(_).
+auto_essay_helper("Title",1,member).
+```
+where `member` may be replaced with the options above, etc.
+You will be asked to select from keywords found in the sources folder.
 
 * See <a href="https://htmlpreview.github.io/?https://github.com/luciangreen/Essay-Helper/blob/master/walk_through3.1-chicago.html">walk_through3.1-chicago.html</a> as an example of Essay Helper 3.1-Chicago.
 
