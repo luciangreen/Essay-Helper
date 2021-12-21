@@ -26,7 +26,12 @@ auto_essay_helper(Title,Reasons_per_paragraph,Selection_method) :-
 	%subtract(Freqs1,Connectives,
 	Freqs2),
 	sort(Freqs2,Freqs3),
-	(Freqs3=[[_,Q],[_,R],[_,S],[_,T],[_,U]|_]->true;
-	(writeln("Not enough keywords in sources.",abort))),
-	short_essay_helper_keywords_per_paragraph(Title,[[Q],[R],[S],[T],[U]],Reasons_per_paragraph,Selection_method),!.
+	findall([Freqs4],member([_,Freqs4],Freqs3),Freqs5),
+	writeln1(Freqs5),
+	writeln("Please enter keywords for each paragraph in form [[\"para1kw1\",\"para1kw2\"],[\"para2kw1\",\"para2kw2\"], ...] :"),
+	read_string(user_input, "\n", "\r", _, KW1),
+	%(Freqs3=[[_,Q],[_,R],[_,S],[_,T],[_,U]|_]),%->true;
+	%(writeln("Not enough keywords in sources.",abort))),
+	term_to_atom(KW,KW1),
+		short_essay_helper_keywords_per_paragraph(Title,KW,Reasons_per_paragraph,Selection_method),!.
 	
