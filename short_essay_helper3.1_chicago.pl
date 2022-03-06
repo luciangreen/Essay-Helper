@@ -22,12 +22,7 @@
 %%:- include('distances.pl').
 :- use_module(library(date)).
 :- include('../listprologinterpreter/la_strings').
-%:- include('../listprologinterpreter/la_maths.pl').
 :- include('sheet_feeder.pl').
-:- include('../mindreader/make_mind_reading_tree4 working1.pl').
-:- include('../mindreader/mr_tree.pl').
-
-:- include('short_essay_helper3.1_chicago_keywords_per_paragraph.pl').
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
@@ -37,7 +32,6 @@
 :- dynamic end_note_number/1.
 :- dynamic num_paras_exp/1.
 :- dynamic num_paras_crit/1.
-:- dynamic choosing_method/1.
 
 %%:- dynamic end_notes/1.
 
@@ -123,16 +117,7 @@ choose2(N2,B,B1,B2,List0,List0) :-
 	.
 	
 choose1(List0,Item) :-
-	choosing_method(Choosing_method),
-	
-	(Choosing_method=member->
-	member(Item,List0);
-	(Choosing_method=random_member->
-	random_member(Item,List0);
-	(Choosing_method=mind_reader->
-	mind_read10(Item,List0);
-	(Choosing_method=mind_reader_tree->
-	mind_read(Item,List0))))).
+	random_member(Item,List0).
 
 delete_invisibles_etc(F,G) :-
 	findall(J,(member(H,F),atom_string(H,J),not(J="."),not(J=".."),not(string_concat(".",_,J))),G).
@@ -144,11 +129,8 @@ list([L|Ls]) --> [L], list(Ls).
 
 short_essay_helper(%%Filex,
 	String01,Key_words,
-	Reasons_per_paragraph,Choosing_method) :-
+	Reasons_per_paragraph) :-
 	
-	retractall(choosing_method(_)),
-	assertz(choosing_method(Choosing_method)),
-
 	retractall(num_paras_exp(_)),
 	assertz(num_paras_exp(5)),
 

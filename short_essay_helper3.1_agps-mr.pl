@@ -1,3 +1,5 @@
+%% backdated from this - which has no repeats and forward progress through essays, but has a bug in numbering pages in references, so backdated to version with repeats and random progress, made forward progress x kept this version and solved bug with pg info in db
+
 %% Prolog Short Essay Helper
 
 %% Keep 1,2,3 in aphors
@@ -18,28 +20,91 @@
 %%:- include('distances.pl').
 :- use_module(library(date)).
 :- include('../listprologinterpreter/la_strings').
+:- include('texttobr2qb.pl').
 :- include('sheet_feeder.pl').
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
 :- dynamic refs/1.
-:- dynamic refs_long/1.
+:- dynamic chosen_quotes/1.
+:- dynamic string00_z/1.
 
-choose(List0,Item) :-
-	random_member(Item10,List0),
-	string_codes(Item10,List),
-	split_string(List,".\n",".\n",List2),
-	random_member(Item1,List2),
+choose(N2,B,B1,B2,C,Item) :-
+%%trace,
+(
+	choose2(N2,B,B1,B2,C,Item)->true;(Item="* All quotes exhausted. (*)"),N2=0,B="()",B1="()",B2=0,C=""),
+	%%notrace,
+	!.
+choose2(N2,B,B1,B2,List0,List0) :-
+%%trace,
+	string00_z(String00),
+	choose_sentence_range(String00,N1,B,B1,B2,List0),
+	%%chosen_quotes(Chosen_quotes1),
+	%%trace,
+	%%length(List0,L),
+	%%numbers(L,1,[],N),
+	%%random_
+	%%member(N1,N),
+	%%
+	%%random_
+	%%mind_read([N1,Item10],List0),
+	
+	%%random_
+	%%mind_read(Item1,Item10),
+	N2 is N1+B2-1,
+	%%get_item_n(List0,N1,Item10),
+
+
+	%%**string_codes(Item10,List),
+	%%notrace,
+	%%**split_string(List,".\n",".\n",List2),
+	
+	%%length(List2,L),
+	%%numbers(L,1,[],N),
+	%%random_
+	%%member(N1,N),
+	%%N2 is N1+B2-1,
+	%%random_
+	%%**member(Item1,List2),
+	
+	%%get_item_n(List2,N1,Item1),
+	/**
 	string_concat(E,D,Item1),
 	string_length(E,1),
 	downcase_atom(E,E1),
 	atom_string(E1,E2),
 	string_concat(E2,D,Item2),
+	string_length(E2,1),
 	string_concat(Item2,""%%"."
-	,Item).
+	,Item),
+	**/
+	delete(String00,[B,B1,B2,N1,List0],String00_a),
+	%%**delete(String00,[B,B1,B2|_],String00_a),
+	%%**delete(List0,[N1,Item10],List6),
+	%%findall([Item3,". "],(member(Item3,List2)),List3),
+	%%maplist(append,[List3],[List4]),
+	%%concat_list(List4,_List5),
+	%%append(List6,[]%%List5
+	%%,List7),
+	%%**(List6=[]->String00_b=String00_a;
+	%%**(%%trace,
+	%%**maplist(append,[[[B,B1,B2],List6]],[String00_c]),
+	%%**append(String00_a,[String00_c],String00_b)%%,notrace
+	%%**)),
+	retractall(string00_z(_)),
+	assertz(string00_z(String00_a))
+	%%trace,
+	%%writeln1(String00_b),notrace
+
+
+	%%,not(member(Item,Chosen_quotes1)),
+	%%append(Chosen_quotes1,[Item],Chosen_quotes2),
+	%%retractall(chosen_quotes(_)),
+	%%assertz(chosen_quotes(Chosen_quotes2))
+	.
 	
 choose1(List0,Item) :-
-	random_member(Item,List0).
+	mind_read(Item,List0).
 
 delete_invisibles_etc(F,G) :-
 	findall(J,(member(H,F),atom_string(H,J),not(J="."),not(J=".."),not(string_concat(".",_,J))),G).
@@ -50,34 +115,90 @@ list([]) --> [].
 list([L|Ls]) --> [L], list(Ls).
 
 short_essay_helper(%%Filex,
-	String01,
+	String01,Key_words,
 	Reasons_per_paragraph) :-
+	retractall(string00_z(_)),
+	%%assertz(string00_z([])),
+
 	retractall(critique3(_)),
 	assertz(critique3([])),
 
 	retractall(refs(_)),
 	assertz(refs([])),
 
-	retractall(refs_long(_)),
-	assertz(refs_long([])),
-
-	retractall(key_words(_)),
-	assertz(key_words([])),
+	retractall(chosen_quotes(_)),
+	assertz(chosen_quotes([])),
 
 	directory_files("sources/",F),
 	delete_invisibles_etc(F,G),
-
-	findall(String02a,(member(Filex1,G),
+%%trace,
+SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",
+	findall(String02h3,(member(Filex1,G),
 	string_concat("sources/",Filex1,Filex),
 		phrase_from_file_s(string(String00a), Filex),
 		string_codes(String02b,String00a),
-		atom_to_term(String02b,String02a,[])
-		%%split_string(String00, "\n\r", "\n\r", [String01a|_]),
+		atom_to_term(String02b,String02a,[]),
+		
+		(String02a=[Az,Bz,Cz|String02c]->true;
+		(concat_list(["Error: ",Filex," not in format [\"Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\",\"Surname, A 2000\",First_Page_Num,\"<first page>\",\"<second page>\",...\"]"],Notification1),writeln(Notification1),abort)),
+		%%String02c=String02d,
+		%%trace,
+		findall([Az,Bz,Cz,N1,String02cb],(
+		
+	length(String02c,L),
+	numbers(L,1,[],N),
+	%%random_
+	member(N1,N),
+	get_item_n(String02c,N1,String02ca),
+
+		%%member(String02ca,String02c),
+		split_string(String02ca, ".\n\r", ".\n\r", String02cb)
+		
+		%%member(String02cb1,String02cb)
+		
+		),String02cc),
+		%%maplist(append,[String02cc],[String02d]),
+		
+		%%delete(String02cc,[_,[]],String02d),
+		String02cc=String02d,
+		
+		findall([Az,Bz,Cz,N2,String02d2],(member([Az,Bz,Cz,N2,String02d1],String02d),
+		member(String02d2,String02d1),
+		downcase_atom(String02d2,String02e),
+		atom_string(String02e,String02f1),
+		split_string(String02f1, SepandPad, SepandPad, String02e1),
+		findall(String02g,(member(Key_words1,Key_words),
+			%%trace,
+		downcase_atom(Key_words1,Key_words11),
+		atom_string(Key_words11,Key_words12),
+findall(Key_words12,(member(Key_words12,String02e1)),String02g)
+		),String02i),
+		not(maplist(equals_empty_list,String02i))
+
+			),String02h31),
+			
+			sort(String02h31,String02h3)
 
 		%%prepare_file_for_ml(String00,String02a)
-		),String00),
-		
+		),String00z1),
+		%%,
+
+		%%** findall(String02h2,(member([Ay,By,Cy,String02h1],String00z1),
+		%%**(String02h1=[]->String02h2=[];
+		maplist(append,[String00z1],[String00]),%%**)
+		%%**),String00z),
+
+%%delete(String00z,[],String00),
+
+
+term_to_atom(Key_words,Key_words_a),
+atom_string(Key_words_a,Key_words_b),		
+		(String00=[]->(concat_list(["Error: No files in source folder or no instances of keywords ",Key_words_b," in files in source folder."],Notification2),writeln(Notification2),abort);true),
+
+				%%maplist(append,[[String00z1]],String00),
+%%maplist(append,[String00z],String00),
 		%%trace,
+assertz(string00_z(String00)),
 		%%writeln1(String00),
 		%%notrace,
 	
@@ -108,14 +229,14 @@ agree_disagree(Pole),
 	%%concat_list(["What is the future area of research from your essay about ",String01,"? "],Future_research_prompt),
 	%%trace,
 	%%get_string(Future_research_prompt,either,one-not-ml,"","",Future_research),
-	choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
-	choose(String00a4,String00a5),
-	concat_list(["In ",String01,", automation should apply to ",String00a5," (",String00a2,", p. ",N_page_ref,")."],Future_research),
+%%	choose_sentence_range(String00,),
+	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
+	concat_list(["In ",String01,", automation should apply to \"",String00a5,"\" (",String00a2,", p. ",N_page_ref,")."],Future_research),
 	reference(String00a1),
 	
-	refs(R2),refs_long(R21),
+	refs(R2),
 
-term_to_atom([Exposition,Critique,String3ad,Future_research,R21],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
+term_to_atom([Exposition,Critique,String3ad,Future_research,R2],File_contents),open_s(File1,write,Stream),write(Stream,File_contents),close(Stream),
 
 %% Output essay
 %%findall(_,(member(Exposition1,Exposition),Exposition1=
@@ -129,7 +250,7 @@ writeln1(Essay),
 	(open_s(File2,write,Stream1),
 %%	string_codes(BrDict3),
 	write(Stream1,HTML),
-	close(Stream1))
+	close(Stream1)),!
 	.
 
 %% replace("a\nb","\n","<br>\n",F).
@@ -301,10 +422,10 @@ explain_structure(String01,Reasons_per_paragraph,_File1) :-
 choose_sentence_range(String00,N2,B,B1,B2,C) :-
 	length(String00,L),
 	numbers(L,1,[],N),
-	random_member(N1,N),
+	mind_read(N1,N),
 	get_item_n(String00,N1,A),
-	A=[B,B1,B2|C],
-	N2 is N1+B2-1.
+	A=[B,B1,B2,N2,C].
+	%%N2 is N1+B2-1.
 	%%random_member(A,String00),
 	
 exposition(String00,_String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :-
@@ -319,9 +440,9 @@ exposition(String00,_String01,Reasons_per_paragraph,Numbers,ML_db,Exposition1) :
 		%%trace,
 member(Number1,List1),%%concat_list(["What is group ",Number1," of 5 in the exposition that groups ideas about ",String01,"? "],String1),%%get_string(String1,either,one-not-ml,"","",%ML_db,Exposition2)
 %% ** Doesn't print this
-choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
-	choose(String00a4,String00a5),
-	concat_list([String00a5," (",String00a2,", p. ",N_page_ref,") "],Exposition2),
+%%choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
+	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
+	concat_list(["",String00a5," (",String00a2,", p. ",N_page_ref,") "],Exposition2),
 	reference(String00a1)),Exposition3),
 	
 
@@ -339,8 +460,8 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	%%concat_list(["What is the sentence number of the quote about the paragraph topic ",Item1,"? "],String2a),get_number(String2a,String3a),
 	%%member1a([String3,String3a,String3aa],ML_db),
 	%%concat_list(["What is the paraphrased quote about the paragraph topic ",Item1,"? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
-	choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
-	choose(String00a4,String00a5),
+	%%choose_sentence_range(String00,N_page_ref,String00a1,String00a2,_String00a3,String00a4),
+	choose(N_page_ref,String00a1,String00a2,_String00a3,_String00a4,String00a5),
 	concat_list([Item1," is because ",String00a5," (",String00a2,", p. ",N_page_ref,")."],String5a),
 	reference(String00a1),
 	
@@ -350,9 +471,9 @@ exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5):-
 	
 	%%get_string(String4,either,one-not-ml,Item1a,String3aa,String5)
 	
-		choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
-	choose(String00a41,String00a51),
-	concat_list([Item1," is because ",String00a51," (",String00a21,", p. ",N_page_ref1,")."],String5),
+		%%choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
+	choose(N_page_ref1,String00a11,String00a21,_String00a31,_String00a41,String00a51),
+	concat_list([Item1," is because \"",String00a51,"\" (",String00a21,", p. ",N_page_ref1,")."],String5),
 	reference(String00a11)
 )
 	->true;exposition2(String00,Item1,ML_db,String3,String3a,String5a,String5).
@@ -406,9 +527,9 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%member1a([String3,String3a,String3aa],ML_db),
 	%%concat_list(["What is the paraphrased quote to comment on? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
 	
-			choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
-	choose(String00a41,String00a51),
-	concat_list([String00a51," (",String00a21,", p. ",N_page_ref1,")."],String5a),
+			%%choose_sentence_range(String00,N_page_ref1,String00a11,String00a21,_String00a31,String00a41),
+	choose(N_page_ref1,String00a11,String00a21,_String00a31,_String00a41,String00a51),
+	concat_list(["\"",String00a51,"\" (",String00a21,", p. ",N_page_ref1,")."],String5a),
 	reference(String00a11),
 
 	%%concat_list(["Is your comment from a quote (y/n)? "],String2yn),get_string(String2yn,either,one-not-ml,"","",String3yn),
@@ -428,9 +549,9 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%trace,
 	%%get_string(String4ac,either,one-not-ml-ref,"",String3aay,String5a1)
 	
-				choose_sentence_range(String00,N_page_ref2,String00a12,String00a22,_String00a32,String00a42),
-	choose(String00a42,String00a52),
-	concat_list([String00a52," (",String00a22,", p. ",N_page_ref2,")."],String5a1),
+				%%choose_sentence_range(String00,N_page_ref2,String00a12,String00a22,_String00a32,String00a42),
+	choose(N_page_ref2,String00a12,String00a22,_String00a32,_String00a42,String00a52),
+	concat_list(["\"",String00a52,"\" (",String00a22,", p. ",N_page_ref2,")."],String5a1),
 	reference(String00a12)
 
 		)
@@ -439,10 +560,11 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%concat_list(["What is the comment? "],String4ac),%%get_string(String4ac,either,one-not-ml,"","",%%String5a,
 %%	String5a1)
 
-				choose_sentence_range(String00,N_page_ref3,String00a13,String00a23,_String00a33,String00a43),
-	choose(String00a43,String00a53),
-	concat_list([String00a53," (",String00a23,", p. ",N_page_ref3,")."],String5a1),
+				%%choose_sentence_range(String00,N_page_ref3,String00a13,String00a23,_String00a33,String00a43),
+	choose(_N_page_ref3,String00a13,_String00a23,_String00a33,_String00a43,String00a53),
+	concat_list(["\"",String00a53,"\"."],String5a1),
 	reference(String00a13)
+	%%" (",String00a23,", p. ",N_page_ref3,")."
 
 )),
 	
@@ -453,10 +575,13 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	%%downcase_and_split(String01,String01ds),
 	%%get_string(Topic_paragraph_link_prompt,either,one-not-ml,String5a1ds,String01ds,Topic_paragraph_link)
 	
-	string_concat(String5a1_az,".",String5a1),			choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
-	choose(String00a44,String00a54),
-	concat_list([String01," is because of ",String5a1_az," because of ",String00a54," (",String00a24,", p. ",N_page_ref4,")."],Topic_paragraph_link),
-	reference(String00a14)
+	string_concat(String5a1_az,".",String5a1),			%%choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
+	%%choose(N_page_ref4,String00a14,String00a24,_String00a34,String00a44,String00a54),
+	split_string(String01,"(","(",[String01_a|_]),
+	
+	concat_list([String01_a," is because ",String5a1_az,"."%% because of ",String00a54," (",String00a24,", p. ",N_page_ref4,")."
+	],Topic_paragraph_link)
+	%%reference(String00a14)
 
 	/**
 	%% conn - choose connected comments
@@ -467,7 +592,7 @@ critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,S
 	get_string(String4,either,two,Item1a,String3aa,String5)
 	**/
 	)
-	->true;critique2(String00,ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,Topic_paragraph_link).
+	->true;critique2(String00,String01,ML_db,String3,String3a,String5a,String3y,String3ay,String5a1,Topic_paragraph_link).
 
 
 
@@ -524,9 +649,9 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	%%member1a([String3,String3a,String3aa],ML_db),
 	%%concat_list(["What is the paraphrased quote to comment on? "],String4a),%%get_string(String4a,either,one-not-ml-ref,"",String3aa,String5a),
 	%%trace,
-					choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
-	choose(String00a44,String00a54),
-	concat_list([String00a54," (",String00a24,", p. ",N_page_ref4,")."],String5a),
+					%%choose_sentence_range(String00,N_page_ref4,String00a14,String00a24,_String00a34,String00a44),
+	choose(N_page_ref4,String00a14,String00a24,_String00a34,_String00a44,String00a54),
+	concat_list(["\"",String00a54,"\" (",String00a24,", p. ",N_page_ref4,")."],String5a),
 	reference(String00a14),
 
 	
@@ -546,9 +671,9 @@ CNumber2aa,CNumber3aa,CString5a1a,
 	%%trace,
 	%%get_string(String4ac,either,one-not-ml-ref,"",String3aay,String5a1)
 	
-						choose_sentence_range(String00,N_page_ref5,String00a15,String00a25,_String00a35,String00a45),
-	choose(String00a45,String00a55),
-	concat_list([String00a55," (",String00a25,", p. ",N_page_ref5,")."],String5a1),
+						%%choose_sentence_range(String00,N_page_ref5,String00a15,String00a25,_String00a35,String00a45),
+	choose(N_page_ref5,String00a15,String00a25,_String00a35,_String00a45,String00a55),
+	concat_list(["\"",String00a55,"\" (",String00a25,", p. ",N_page_ref5,")."],String5a1),
 	reference(String00a15)
 
 	%%,trace
@@ -601,6 +726,19 @@ concat_list(CStrings11,_CStrings12),
 %%concat_list(["Please select a comment to connect the comment ",LastCStrings," to:","\n",CStrings12],ConnectionNumberPrompt),
 %%get_number(ConnectionNumberPrompt,ConnectionNumber),
 %numbers(
+
+%% *** Choose phrase which is similar to a previous phrase
+
+%% findall([N," - ",CString5a1,"\n"],(member(N,List1),get_item_n(Critique33,N,[CNumber2a,CNumber3a,_CString3,_CString3a,_CString5a,_CString3y,_CString3ay,CString5a1]),
+ 
+ /**SepandPad="#@~%`$?-+*^,()|.:;=_/[]<>{}\n\r\s\t\\!'0123456789",findall([CString5a1Z2,CString5a1Z5],(downcase_atom(CString5a1,CString5a1Z1),atom_string(CString5a1Z1,CString5a1Z2),split_string(CString5a1,SepandPad,SepandPad,CString5a1Z3),
+ Connectors=
+		["the","a","i","on","with","of","an","for","to",
+		"was","were","and","in","my","from","out","by"],
+		%% find distances between terms, closest to sent
+	subtract(CString5a1Z3,Connectors,CString5a1Z5),
+	),CString5a1Z4),
+**/
 choose1(List1,ConnectionNumber),
 	member([ConnectionNumber,CNumber2aa,CNumber3aa,CString5a1a],CStringsRR),
 	
@@ -618,9 +756,15 @@ choose1(List1,ConnectionNumber),
 	%%get_string(ConnectionPrompt,either,one-not-ml,CString5a1a2,LastCStrings_a1,String5aaa)
 
 	string_concat(LastCStrings_az,".",LastCStrings),
-	string_concat(CString5a1a_az,".",CString5a1a),						choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
-	choose(String00a46,String00a56),
-	concat_list([LastCStrings_az," is because of ",CString5a1a_az," because of ",String00a56," (",String00a26,", p. ",N_page_ref6,")."],String5aaa),
+	string_concat(CString5a1a_az1,".",CString5a1a),						%%choose_sentence_range(String00,N_page_ref6,String00a16,String00a26,_String00a36,String00a46),
+	
+		split_string(LastCStrings_az,"(","(",[LastCStrings_az_a|_]),
+
+replace(CString5a1a_az1,"\"","",CString5a1a_az),
+replace(LastCStrings_az_a,"\"","",LastCStrings_az_a1),
+choose(_N_page_ref6,String00a16,_String00a26,_String00a36,_String00a46,_String00a56),
+	concat_list([LastCStrings_az_a1," because ",CString5a1a_az,"."%%" because ",String00a56," (",String00a26,", p. ",N_page_ref6,")."
+	],String5aaa),
 	reference(String00a16)
 
 	
@@ -747,7 +891,6 @@ maplist(equals_empty_list,Item12)
 	))))).
 	
 reference(String2r) :-
-	refs_long(R10),
 	(refs(R1),%%writeln("What is the reference? e.g. Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.\n"),writeln("Existing references (copy one or many delimited with \"\\n\"):"), 
 	findall(_,(member(R11,R1),writeln(R11)),_),%%read_string(user_input, "\n", "\r", _End4, String2r),
 	not(String2r=""),%%downcase_atom(String2r,_String3r),
@@ -755,10 +898,8 @@ reference(String2r) :-
 	split_string(String2r,"\n\r","\n\r",String2r3),
 	%%trace,
 	retractall(refs(_)),maplist(append,[[R1,String2r3]],[String2r21]),
-	retractall(refs_long(_)),maplist(append,[[R10,String2r3]],[String2r210]),
 	sort1(String2r21,String2r2),
-	assertz(refs(String2r2)),
-	assertz(refs_long(String2r210))%%split_string(String3r, SepandPad, SepandPad, String4)
+	assertz(refs(String2r2))%%split_string(String3r, SepandPad, SepandPad, String4)
 	).
 	
 
@@ -945,3 +1086,200 @@ numbers(N2,N1,Numbers1,Numbers2) :-
 	N3 is N1+1,
 	append(Numbers1,[N1],Numbers3),
 	numbers(N2,N3,Numbers3,Numbers2).
+
+
+mind_read(Item,List) :-
+	trialy2(List,R1),
+	findbest(R1,Item),!.
+	%%random_member(Item,List),!.
+	
+trialy2(List,R) :-
+%%writeln([list,List]),
+%%notrace,
+	length(List,Length),
+	/**
+	((Length=<9->
+		findr4(R4),
+		number_string(R4,R4A),
+		formr5([R4A],9,Length,R5),
+		findr(R5,List,R));
+	(Length=<99->
+		findr4(R41),
+		findr4(R42),
+		formr5([R41,R42],99,Length,R5),
+		findr(R5,List,R));
+	(Length=<999->
+		findr4(R41),
+		findr4(R42),
+		findr4(R43),
+		formr5([R41,R42,R43],999,Length,R5),
+		findr(R5,List,R));
+	fail),
+	%%writeln([r,R]),trace.
+	true.
+	**/
+
+log(Length,A),log(10,C),B is floor(A/C)+1,
+numbers(B,1,[],D),
+findall(R,(member(_E,D),findr4(R1),number_string(R1,R)),RL),
+B2 is floor(10^((floor(A/C)+1))-1),
+formr5(RL,B2,Length,R5),
+findr(R5,List,R)
+
+.
+
+findr4(R4) :-
+		List1=[0,1,2,3,4,5,6,7,8,9],
+		Trials is 30,
+		
+%catch(
+	(trialy22(List1,Trials,[],R1),
+	findbest2(R1,R4)
+	%writeln1([item,Item])
+	)
+   %_,
+	%findr4(R4)
+	%)
+	.
+	
+		%%number_string(R3,R2),
+formr5(RList,Upper,Length,R5) :-
+		%%findall(D,(member(C,RList),floor(C,D)),RList2),
+		concat_list2A(RList,R5A),
+		number_string(R5B,R5A),
+		%%R5B=R5A,
+		R51 is floor((R5B/Upper)*Length),
+		(R5B=Upper->R5 is R51-1;R5=R51).
+findr(R4,List,R) :-
+		%%floor(R4,R4A),		
+		length(A,R4),
+		append(A,[R|_],List).
+
+	%%random_member(A,List),
+	%%R=[[_,A]].
+	
+	/**
+	length(List,L),
+	Trials is L*3,
+	trialy22(List,Trials,[],R).**/
+
+trialy22([],_,R,R) :- !.
+trialy22(List,Trials,RA,RB) :-
+	List=[Item|Items],
+	trialy21(Item,Trials,R1),
+	append(RA,[R1],RC),
+	trialy22(Items,Trials,RC,RB),!.
+
+trialy21(Label,Trials,RA) :-
+	trialy3(Trials,[],R),
+	aggregate_all(count, member(true,R), Count),
+	RA=[Count,Label].
+
+trialy3(0,R,R) :-!.
+trialy3(Trials1,RA,RB) :-
+	trialy1(R1),
+	append(RA,[R1],RC),
+	Trials2 is Trials1-1,
+	trialy3(Trials2,RC,RB),!.
+	
+%% try other nouns
+trialy1(R1) :-
+	%%control11(A1),
+	trial0(A22), %% Control
+	sum(A22,0,S22),
+	mean(S22,A1),
+	trial0(A21), %% Test 1
+	sum(A21,0,S02),
+	mean(S02,A2),
+	(A1>A2->R1=true;R1=fail).
+
+trial0(S3) :- N is 10, 
+catch(
+	(trial1(N,[],S),trial01(S,S3)),
+   _,
+	trial0(S3)).
+trial01(S1,S3) :-
+	sort(S1,S),
+	%%midpoint(S,MP),
+	halves(S,H1,H2),
+	midpoint(H1,Q1),
+	midpoint(H2,Q3),
+	IQR is Q3-Q1,
+	sum(S,0,S02),
+	mean(S02,Mean),
+	furthestfrommean(S,Mean,V),
+	D1 is 1.5*IQR,
+	D2 is V-Mean,
+	(D2>D1->(delete(S,V,S2),trial01(S2,S3));S=S3).
+	
+trial1(0,A,A) :- !.
+trial1(N,A,B) :- mindreadtest(S), append(A,[S],A2),
+	N1 is N-1,trial1(N1,A2,B).
+	
+midpoint(S,MP) :-
+	length(S,L),
+	A is mod(L,2),
+	(A is 0->
+		(M1 is L/2, M2 is M1+1,N1 is M1-1,N2 is M2-1,length(N11,N1),length(N21,N2),append(N11,[N12|_Rest1],S),append(N21,[N22|_Rest2],S),MP is (N12+N22)/2)
+	;
+		(L2 is L+1, M1 is L2/2, N1 is M1-1,length(N11,N1),append(N11,[MP|_Rest],S))).
+
+halves(S,H1,H2) :-
+	length(S,L),
+	A is mod(L,2),
+	(A is 0->
+		(M1 is L/2,length(H1,M1),append(H1,H2,S))
+	;
+		(L2 is L-1,M1 is L2/2,length(H1,M1),append(H1,[_|H2],S))).
+
+sum([],S,S):-!.
+sum(S0,S1,S2) :-
+	S0=[S3|S4],
+	S5 is S1+S3,
+	sum(S4,S5,S2).
+	
+mean(Sum,Mean) :-
+	Mean is Sum/2.
+
+furthestfrommean(S,Mean,V) :-
+	absdiffmean(S,Mean,[],D),
+	sort(D,D1),
+	reverse(D1,[[_,V]|_Rest]).
+
+absdiffmean([],_M,D,D) :- !.
+absdiffmean(S,M,D1,D2) :-
+	S=[S1|S2],
+	S3 is abs(S1-M),
+	append(D1,[[S3,S1]],D3),
+	absdiffmean(S2,M,D3,D2).
+
+mindreadtest(Sec) :-
+	%% 250 br for characters to be br out with 10 br each from person to me - do when initial 250 br test done and doing 10 br test
+	%%comment(fiftyastest),
+	%%random(X),X1 is 10*X, X2 is floor(X1), (X2=<2 -> (
+	%%texttobr,writeln(['true test']), %%); %% use breasonings breasoned out by computer for not by me, for job medicine for "me", at last time point
+	%%true), %% leave last time point blank
+	%%**texttobr2(640);true),%% make an A to detect reaction to gracious giving or blame of in following
+	get_time(TimeStamp1),
+	%%phrase_from_file(string(_String), 'file.txt'),
+	texttobr2(2), %% 100 As for answer (must be br before this on same day)
+	%% is gracious giving or blame
+	get_time(TimeStamp2),
+	%%comment(turnoffas),
+   Sec is TimeStamp2 - TimeStamp1.
+
+concat_list2A(A1,B):-
+	A1=[A|List],
+	concat_list2A(A,List,B),!.
+
+concat_list2A(A,[],A):-!.
+concat_list2A(A,List,B) :-
+	List=[Item|Items],
+	string_concat(A,Item,C),
+	concat_list2A(C,Items,B).
+	
+findbest(R,R) :-!.
+findbest2(R,Item):-
+	sort(R,RA),
+	reverse(RA,RB),
+	RB=[[_,Item]|_Rest].
