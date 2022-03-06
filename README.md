@@ -97,7 +97,7 @@ with heading of the essay, "Author's Heading" and 5 reasons per paragraph.
 * Load with `['short_essay_helper3_agps.pl'].`
 * Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
-* Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
+* Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.  Run sheet feeder with one file at a time and `swipl --stack_limit=2G` for better results.
 * Check the new source files in the `sources` folder are in the format:
 ```
 ["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
@@ -137,7 +137,7 @@ with heading of the essay, "Author's Heading", 5 reasons per paragraph and choos
 * Load with `['short_essay_helper3.1_agps.pl'].`
 * Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
-* Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
+* Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.  Run sheet feeder with one file at a time and `swipl --stack_limit=2G` for better results.
 * Check the new source files in the `sources` folder are in the format:
 ```
 ["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
@@ -186,7 +186,7 @@ You will be asked to select from keywords found in the sources folder.
 * Load with `['short_essay_helper3.1_chicago.pl'].`
 * Mind reading mode mind reads character by character). Mind reading mode detects vague, not exact thoughts. Before running texttobr (in mind reader), think of two radio buttons put on recordings, put through with prayer, nut and bolt, quantum box prayer 1, 1, 0.5 cm and 1, 1, 0.5 cm.  Follow instructions in <a href="https://github.com/luciangreen/mindreader/blob/master/init.txt">Instructions for initialising Mind Reader</a> and <a href="https://github.com/luciangreen/Text-to-Breasonings/blob/master/Instructions_for_Using_texttobr(2).pl.txt">Instructions for Using texttobr(2)</a> when using texttobr, texttobr2 or mind reader to avoid medical problems.
 * In the `raw_sources` folder, place text files for the essay sources with the names "*.txt", etc., and two newlines between pages.
-* Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.
+* Run `sheet_feeder(_).` to convert the files in `raw_sources` and save them in `sources`.  Run sheet feeder with one file at a time and `swipl --stack_limit=2G` for better results.
 * Check the new source files in the `sources` folder are in the format:
 ```
 ["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"<first page>","<second page>",...]
