@@ -5,6 +5,7 @@ Essay Helper | <a href="https://github.com/luciangreen/Text-to-Breasonings">Text
 * Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 * You should use a word frequency tool to find viable keywords.  You may need to redraft after reading to find better keywords.
 * Think of the "number one way of thinking" before running any mind reading algorithm for more understandable results.
+* Run sheet feeder with `swipl --stack_limit=2G`, one file at a time and quitting swipl between attempts for better results.
 
 * short_essay_helper.pl - the Essay Helper algorithm
 * distances.pl - the KNN algorithm
