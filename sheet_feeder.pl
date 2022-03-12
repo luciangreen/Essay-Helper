@@ -30,49 +30,18 @@ sheet_feeder(T) :-
 
 	),T).
 	
-process(List0,List1,List2) :-
+process(A,_,C) :-
+ replace(Replacements),
+ atom_string(A1,A),
+ replace1(Replacements,A1,D1),
+ atomic_list_concat(D,'\n\n',D1),
+ findall(C1,(member(D2,D),atom_string(D2,C1)),C),!.
 
-	replace(Pairs),
-	(not((append(_B11,C11,List0),append(A,_C31,C11),
-	(member([A,_],Pairs)->true;A=`\n\n`)))->
-	(string_codes(Middle1,List0),
-	append(List1,[Middle1],List2));
-	
-	(process2(List0,[],List4,_,C32),
-	string_codes(Middle1,List4),
-	append(List1,[Middle1],List3),
-			
-	process(C32,List3,List2))),!.
+replace1([],A,A) :- !.
+replace1(Replacements,A,D) :-
+ Replacements=[[B,C]|G],
+ atomic_list_concat(E,B,A),
+ atomic_list_concat(E,C,F),
+ replace1(G,F,D),!.
 
-
-process2([],List,List,B,B) :- !.
-process2(List,List1,List2,B12,B13) :-
-%trace,
-	replace(Pairs),
-	(append(B11,C11,List),append(A,C31,C11),
-	%[A1]=A,
-	(member([A,B],Pairs)->(foldr(append,[B],B2),
-	append(List1,B2,List3),
-	process2(C31,List3,List2,B12,B13));
-	
-	(A=`\n\n`
-	->(%trace,
-	%writeln1(append(List1,B11,List2)),
-	B13=C31,append(List1,B11,List2));
-	
-	(%trace,
-	not(A=[]),(A=`\n` -> (List=`\n`->true;not(append(`\n`,_,C31)));true),
-	(A=`-` -> not(append(` `,_,C31));true),
-	%((A=`\n\n`->true;A=`- `)->A1=``;A1=A),
-	%trace,
-	foldr(append,[B11,A
-	],B2),
-	append(List1,B2,List3),
-	%notrace,
-	process2(C31,List3,List2,B12,B13))
-	
-	))).
-	
-replace([[`\\`,``],[`- `,``],[`\"`,`'`],[`“`,`'`],[`”`,`'`],[`‘`,`'`],[`’`,`'`]]).
-
-
+	replace([['\\',''],['- \n',''],['"','\''],['“','\''],['”','\''],['‘','\''],['’','\'']]).
