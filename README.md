@@ -215,7 +215,7 @@ true.
 
 * <a href="https://github.com/luciangreen/Text-to-Breasonings">Text to Breasonings</a> is required to breason out essays for high distinctions.
 * <a href="https://github.com/luciangreen/Algorithm-Writer-with-Lists">Grammar and Logic to Algorithm, in the Algorithm Writer with Lists Repository</a> is needed to generate 30 As=2400 words in Honours from hand-written 80 philosophy breasonings (100 As in Master=8000 words, 400 As in PhD=32000 words).
-* <a href="https://github.com/luciangreen/Philosophy">Phil2Alg, in the Philosophy Repository</a> is needed to generate details (20 words per sentence in an Honours thesis, 30 in Master in 50 in PhD) before using Grammar and Logic to Algorithm.
+* (NB. Phil2Alg may not produce original algorithms needed.) <a href="https://github.com/luciangreen/Philosophy">Phil2Alg, in the Philosophy Repository</a> is needed to generate details (20 words per sentence in an Honours thesis, 30 in Master in 50 in PhD) before using Grammar and Logic to Algorithm.
 
 
 
