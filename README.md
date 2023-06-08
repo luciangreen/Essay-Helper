@@ -2,6 +2,7 @@ Essay Helper | <a href="https://github.com/luciangreen/Text-to-Breasonings">Text
 
 # Essay Helper
 
+<BODY TEXT="red">* Important: Manually check the page references after using Essay Helper.</body>
 * Uses KNN to help write essays.  Asks for 5 paragraphs of N reasons per paragraph of exposition and critique.  Has a positivity detector (must be positive in whole essay apart from either only positive or negative in critique comments).  Uses K-Nearest-Neighbour algorithm to check quotes, comments and connections are relevant.
 * You should use a word frequency tool to find viable keywords.  You may need to redraft after reading to find better keywords.
 * Think of the "number one way of thinking" before running any mind reading algorithm for more understandable results.
