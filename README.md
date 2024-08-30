@@ -45,7 +45,8 @@ cd List-Prolog-Package-Manager
 swipl
 ['lppm'].
 lppm_install("luciangreen","Essay-Helper").
-halt
+../
+halt.
 ```
 
 # Running Essay Helper
