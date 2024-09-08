@@ -1,6 +1,0 @@
-["Surname, A 2000, <i>Title: Subtitle</i>, Publisher, City.","Surname, A 2000",1,"a
-a","B
-b
-b","C
-c
-c"]
