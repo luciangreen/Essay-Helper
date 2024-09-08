@@ -21,7 +21,7 @@
 :- use_module(library(date)).
 :- include('../listprologinterpreter/la_strings').
 :- include('../mindreader/make_mind_reading_tree4 working1.pl').
-:- include('../mindreader/mr_tree.pl').
+%:- include('../mindreader/mr_tree.pl').
 :- include('texttobr2qb.pl').
 :- include('sheet_feeder.pl').
 
