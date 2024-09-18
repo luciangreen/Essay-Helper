@@ -17,11 +17,11 @@
 
 %% short_essay_helper("file.txt",5,E),writeln1(E).
 
-%%:- include('distances.pl').
+%%:-include('distances.pl').
 :- use_module(library(date)).
-:- include('../listprologinterpreter/la_strings').
-:- include('texttobr2qb.pl').
-:- include('sheet_feeder.pl').
+:-include('../listprologinterpreter/la_strings.pl').
+:-include('texttobr2qb.pl').
+:-include('sheet_feeder.pl').
 
 :- dynamic critique3/1.
 :- dynamic agree_disagree/1.
